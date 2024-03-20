@@ -1,0 +1,90 @@
+---
+import { Icon } from "astro-icon/components";
+import { Button } from "../components/ui/button";
+import Image from "astro/components/Image.astro";
+
+const contactMeItems = [
+	{
+		label: "go to Linkedin",
+		href: "https://www.linkedin.com/in/andres-cs/",
+		icon: "entypo-social:linkedin-with-circle",
+	},
+	{
+		label: "go to Github",
+		href: "https://github.com/andrescasa-dev",
+		icon: "bi:github",
+	},
+	{
+		label: "copy my email",
+		icon: "email",
+	},
+];
+---
+
+<section class="flex">
+	<div class="flex flex-col justify-center gap-6">
+		<h1 class="text-8xl font-bold">
+			I&apos;m <strong class="text-accent">Andrés</strong> Castellanos
+		</h1>
+		<p class="text-2xl">
+			Driven by growth, I develop cutting-edge and appealing websites
+		</p>
+		<div class="grid grid-cols-2 gap-4">
+			<ul>
+				<li class="flex items-center" aria-label="Living in Cúcuta, Colombia">
+					<Icon aria-hidden="true" name="mdi:location" class="h-6 w-6" />
+					Cúcuta, Colombia
+				</li>
+				<li
+					class="flex items-center"
+					aria-label="I speak Native Spanish, English B2"
+				>
+					<Icon aria-hidden="true" name="mdi:language" class="h-6 w-6" />
+					Native Spanish, English B2
+				</li>
+			</ul>
+			<ul id="contact-me" class="flex gap-2 justify-self-center">
+				{
+					contactMeItems.map(({ icon, label, href }) => {
+						const Wrapper = href ? "a" : "button";
+						return (
+							<li>
+								<Wrapper aria-label={label} href={href}>
+									<Icon class="w-10 h-10" aria-hidden="true" name={icon} />
+								</Wrapper>
+							</li>
+						);
+					})
+				}
+			</ul>
+
+			<Button className="justify-self-stretch">
+				Down Load CV
+				<Icon
+					aria-hidden="true"
+					class="h-4 w-4 ml-2"
+					name="mdi:file-document"
+				/>
+			</Button>
+			<Button className="justify-self-stretch" variant={"secondary"}>
+				View Projects
+				<Icon
+					aria-hidden="true"
+					class="h-4 w-4 ml-2"
+					name="mdi:keyboard-arrow-right"
+				/>
+			</Button>
+		</div>
+		<p class="flex justify-center items-center gap-1.5">
+			<span>Full time</span>
+			<span class="text-sm">or</span>
+			<span>Freelance</span>
+		</p>
+	</div>
+	<Image
+		src="/portrait.png"
+		width={631}
+		height={656}
+		alt="A portrait of Andrés Castellanos"
+	/>
+</section>

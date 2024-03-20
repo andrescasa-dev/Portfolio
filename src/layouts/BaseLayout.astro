@@ -1,12 +1,13 @@
+---
+import "@/styles/global.css";
+---
+
 <html lang="en">
-	<head> </head>
+	<head>
+		<meta charset="utf-8" />
+	</head>
 	<body>
-		<div>
-			<!-- nav -->
-			<slot />
-			<!-- footer -->
-			<div>Basic footer</div>
-		</div>
+		<slot />
 		<script>
 			// Add “loaded” class once the document has completely loaded.
 			addEventListener("load", () =>

@@ -13,7 +13,7 @@ export default {
 		},
 		extend: {
 			gridTemplateColumns: {
-				mainLayout: "minmax(1.25rem, 1fr) minmax(1rem, 64rem)minmax(1.25rem, 1fr)"
+				mainLayout: "minmax(1.25rem, 1fr) minmax(0, 64rem) minmax(1.25rem, 1fr)"
 			},
 			colors: {
 				border: "hsl(var(--border))",

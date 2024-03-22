@@ -21,43 +21,68 @@ const contactMeItems = [
 ];
 ---
 
-<section class="flex">
-	<div class="flex flex-col justify-center gap-6">
-		<h1 class="text-8xl font-bold">
+<section class="min-h-screen flex flex-col justify-center">
+	<div class="h-[47%] flex flex-col justify-start">
+		<Image
+			class="mt-auto -z-10 md:block"
+			src="/portrait.png"
+			width={631}
+			height={656}
+			alt="A portrait of Andrés Castellanos"
+		/>
+	</div>
+	<div
+		class="self-start flex flex-col justify-center gap-3 md:gap-6 bg-background"
+	>
+		<h1 class="text-5xl md:text-8xl font-bold text-center">
 			I&apos;m <strong class="text-accent">Andrés</strong> Castellanos
 		</h1>
-		<p class="text-2xl">
+		<p class="hidden md:block md:text-2xl text-center">
 			Driven by growth, I develop cutting-edge and appealing websites
 		</p>
-		<div class="grid grid-cols-2 gap-4">
-			<ul>
-				<li class="flex items-center" aria-label="Living in Cúcuta, Colombia">
-					<Icon aria-hidden="true" name="mdi:location" class="h-6 w-6" />
-					Cúcuta, Colombia
-				</li>
-				<li
-					class="flex items-center"
-					aria-label="I speak Native Spanish, English B2"
-				>
-					<Icon aria-hidden="true" name="mdi:language" class="h-6 w-6" />
-					Native Spanish, English B2
-				</li>
-			</ul>
-			<ul id="contact-me" class="flex gap-2 justify-self-center">
+		<div class="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4">
+			<ul id="contact-me" class="flex gap-2 justify-self-center md:-order-1">
 				{
 					contactMeItems.map(({ icon, label, href }) => {
 						const Wrapper = href ? "a" : "button";
 						return (
 							<li>
 								<Wrapper aria-label={label} href={href}>
-									<Icon class="w-10 h-10" aria-hidden="true" name={icon} />
+									<Icon
+										class="w-8 h-8 md:w-10 md:h-10"
+										aria-hidden="true"
+										name={icon}
+									/>
 								</Wrapper>
 							</li>
 						);
 					})
 				}
 			</ul>
-
+			<ul
+				id="extra-info"
+				class="flex flex-col gap-1 items-center md:-order-2 text-xs"
+			>
+				<li class="flex items-center" aria-label="Living in Cúcuta, Colombia">
+					<Icon
+						aria-hidden="true"
+						name="mdi:location"
+						class="h-4 w-4 md:h-6 md:w-6"
+					/>
+					Cúcuta, Colombia
+				</li>
+				<li
+					class="flex items-center"
+					aria-label="I speak Native Spanish, English B2"
+				>
+					<Icon
+						aria-hidden="true"
+						name="mdi:language"
+						class="h-4 w-4 md:h-6 md:w-6"
+					/>
+					Native Spanish, English B2
+				</li>
+			</ul>
 			<Button className="justify-self-stretch">
 				Down Load CV
 				<Icon
@@ -75,16 +100,10 @@ const contactMeItems = [
 				/>
 			</Button>
 		</div>
-		<p class="flex justify-center items-center gap-1.5">
+		<p class="text-xs md:text-sm flex justify-center items-center gap-1.5">
 			<span>Full time</span>
-			<span class="text-sm">or</span>
+			<span class="text-[10px] md:text-sm">or</span>
 			<span>Freelance</span>
 		</p>
 	</div>
-	<Image
-		src="/portrait.png"
-		width={631}
-		height={656}
-		alt="A portrait of Andrés Castellanos"
-	/>
 </section>

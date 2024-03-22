@@ -15,6 +15,9 @@ export default {
 			gridTemplateColumns: {
 				mainLayout: "minmax(1.25rem, 1fr) minmax(0, 64rem) minmax(1.25rem, 1fr)"
 			},
+			maxWidth: {
+				readable: "42ch"
+			},
 			colors: {
 				border: "hsl(var(--border))",
 				input: "hsl(var(--input))",

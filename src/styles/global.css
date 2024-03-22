@@ -75,3 +75,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+.grid-cols-mainLayout>* {
+  grid-column-start: 2;
+  grid-column-end: -2;
+}

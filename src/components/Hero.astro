@@ -2,23 +2,9 @@
 import { Icon } from "astro-icon/components";
 import { Button } from "../components/ui/button";
 import Image from "astro/components/Image.astro";
+import Email from "./icons/Email";
 
-const contactMeItems = [
-	{
-		label: "go to Linkedin",
-		href: "https://www.linkedin.com/in/andres-cs/",
-		icon: "entypo-social:linkedin-with-circle",
-	},
-	{
-		label: "go to Github",
-		href: "https://github.com/andrescasa-dev",
-		icon: "bi:github",
-	},
-	{
-		label: "copy my email",
-		icon: "email",
-	},
-];
+const contactMeItems = [];
 ---
 
 <section
@@ -52,22 +38,32 @@ const contactMeItems = [
 			class="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4 justify-self-stretch"
 		>
 			<ul id="contact-me" class="flex gap-2 justify-self-center md:-order-1">
-				{
-					contactMeItems.map(({ icon, label, href }) => {
-						const Wrapper = href ? "a" : "button";
-						return (
-							<li>
-								<Wrapper aria-label={label} href={href}>
-									<Icon
-										class="w-8 h-8 md:w-10 md:h-10"
-										aria-hidden="true"
-										name={icon}
-									/>
-								</Wrapper>
-							</li>
-						);
-					})
-				}
+				<li>
+					<a
+						aria-label="go to Linkedin"
+						href="https://www.linkedin.com/in/andres-cs/"
+					>
+						<Icon
+							class="w-8 h-8 md:w-10 md:h-10"
+							aria-hidden="true"
+							name="entypo-social:linkedin-with-circle"
+						/>
+					</a>
+				</li>
+				<li>
+					<a aria-label="go to Github" href="https://github.com/andrescasa-dev">
+						<Icon
+							class="w-8 h-8 md:w-10 md:h-10"
+							aria-hidden="true"
+							name="bi:github"
+						/>
+					</a>
+				</li>
+				<li>
+					<button aria-label={"copy email"}>
+						<Email className="w-8 h-8 md:w-10 md:h-10" aria-hidden="true" />
+					</button>
+				</li>
 			</ul>
 			<ul
 				id="extra-info"

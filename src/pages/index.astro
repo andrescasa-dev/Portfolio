@@ -1,10 +1,15 @@
 ---
 import Hero from "@/components/Hero.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectsBento from "@/components/ProjectsBento.astro";
+import Section from "@/components/Section.astro";
 ---
 
 <BaseLayout>
 	<main class="grid grid-cols-mainLayout">
 		<Hero />
+		<Section title="Projects">
+			<ProjectsBento />
+		</Section>
 	</main>
 </BaseLayout>

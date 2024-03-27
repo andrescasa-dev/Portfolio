@@ -12,8 +12,11 @@ export default {
 			},
 		},
 		extend: {
+			backgroundImage: {
+				gradient: 'linear-gradient(0deg, rgba(35,35,35,1) 0%, rgba(0,0,0,0) 100%)'
+			},
 			gridTemplateColumns: {
-				mainLayout: "minmax(1.25rem, 1fr) minmax(0, 64rem) minmax(1.25rem, 1fr)"
+				mainLayout: "minmax(1rem, 1fr) minmax(0, 64rem) minmax(1rem, 1fr)"
 			},
 			maxWidth: {
 				readable: "42ch"

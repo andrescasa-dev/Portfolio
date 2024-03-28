@@ -4,10 +4,17 @@ export const areas = {
   secondary:
     "[grid-area:_2_/_1_/_3_/_3] md:[grid-area:_4_/_1_/_5_/_4] lg:[grid-area:_1_/_3_/_2_/_5]",
   tertiary:
-    "[grid-area:_3_/_1_/_4_/_2] md:[grid-area:_1_/_3_/_2_/_4] lg:[grid-area:_2_/_3_/_3_/_4]",
+    "[grid-area:_3_/_1_/_4_/_3] min-[370px]:[grid-area:_3_/_1_/_4_/_2] md:[grid-area:_1_/_3_/_2_/_4] lg:[grid-area:_2_/_3_/_3_/_4]",
   quaternary:
-    "[grid-area:_3_/_2_/_4_/_3] md:[grid-area:_2_/_3_/_3_/_4] lg:[grid-area:_2_/_4_/_3_/_5]",
+    "[grid-area:_4_/_1_/_5_/_3] min-[370px]:[grid-area:_3_/_2_/_4_/_3] md:[grid-area:_2_/_3_/_3_/_4] lg:[grid-area:_2_/_4_/_3_/_5]",
 };
+
+export const contentConfig = {
+  primary: { title: "lg:hidden", desc: "lg:hidden" },
+  secondary: { title: "lg:hidden", desc: "lg:hidden" },
+  tertiary: { accordion: "hidden" },
+  quaternary: { accordion: "hidden" }
+}
 
 export const openAreas = {
   primary:

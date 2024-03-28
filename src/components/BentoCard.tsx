@@ -8,27 +8,27 @@ interface Props {
   description: string;
   technologies: { category: string; items: { name: string; icon: string }[] }[];
   area: "primary" | "secondary" | "tertiary" | "quaternary";
-  setOpenArea: React.Dispatch<React.SetStateAction<"primary" | "secondary" | "tertiary" | "quaternary" | undefined>>
+  handleClick: () => void
 }
 
-function BentoCard({ title, description, technologies, area, setOpenArea }: Props) {
+function BentoCard({ title, description, technologies, area, handleClick }: Props) {
   return (
     <article
       role="button"
       className={cn(
-        "border border-border bg-gradient p-5 md:px-6 md:py:py-7 lg:px-9 lg:py-11 rounded-sm",
+        "card bg-gradient",
         areas[area],
       )}
-      onClick={() => setOpenArea((prevState) => prevState === area ? undefined : area)}
+      onClick={handleClick}
     >
 
-      <h2 className="title font-semibold capitalize">{title}</h2>
-      <p className="text-base mt-2 capitalize">{description}</p>
+      <h2 className="title font-semibold ">{title}</h2>
+      <p className="base mt-2 ">{description}</p>
       <section className="flex gap-5 mt-8">
         {
           technologies.map(({ category, items }) => (
             <div key={crypto.randomUUID()}>
-              <h3 className="font-medium capitalize">{category}</h3>
+              <h3 className="font-medium ">{category}</h3>
               <div className="flex flex-wrap gap-2 gap-y-3 mt-2">
                 {items.map(({ name, icon }) => (
                   <TechIcon

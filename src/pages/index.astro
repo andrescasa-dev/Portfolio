@@ -3,13 +3,16 @@ import Hero from "@/components/Hero.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Section from "@/components/Section.astro";
 import ProjectsBento from "@/components/ProjectsBento";
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
 ---
 
 <BaseLayout>
-	<main class="grid grid-cols-mainLayout">
+	<main class="grid grid-cols-mainLayout pb-8">
 		<Hero />
 		<Section title="Projects">
-			<ProjectsBento client:load />
+			<ProjectsBento myProjects={projects} client:load />
 		</Section>
 	</main>
 </BaseLayout>

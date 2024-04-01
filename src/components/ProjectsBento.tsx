@@ -1,28 +1,29 @@
-import { contentConfig, openAreas } from "@/config";
-import { projects } from "@/data";
+import type { CollectionEntry } from "astro:content";
 import { useState } from "react";
 import BentoCard from "./BentoCard";
 import BentoContent from "./BentoContent";
 
-function ProjectsBento() {
-  const [openArea, setOpenArea] = useState<"primary" | "secondary" | "tertiary" | "quaternary" | undefined>(undefined)
+interface Props {
+  myProjects: CollectionEntry<'projects'>[]
+}
+
+function ProjectsBento({ myProjects }: Props) {
+  const [currentProject, setCurrentProject] = useState<CollectionEntry<'projects'> | null>(null)
 
   return (
     <div className="grid gap-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-      {projects.map(({ title, description, technologies, priority: area }) => (
+      {myProjects.map((project) => (
         <BentoCard
           key={crypto.randomUUID()}
-          area={area}
-          title={title}
-          description={description}
-          technologies={technologies}
-          handleClick={() => setOpenArea((prevState) => prevState === area ? undefined : area)}
-        />
-      ))}
+          project={project}
+          handleClick={() => {
+            setCurrentProject((prevProject) => prevProject?.id === project.id ? null : project)
+          }}
+        />)
+      )}
       <BentoContent
-        className={`${openArea ? openAreas[openArea] : "hidden"}`}
-        config={openArea ? contentConfig[openArea] : undefined}
-        handleClose={() => setOpenArea(undefined)}
+        project={currentProject}
+        handleClose={() => setCurrentProject(null)}
       />
     </div>
   )

@@ -1,17 +1,16 @@
 
-import { areas, openAreas } from "@/config";
+import { areas } from "@/config";
 import { cn } from "@/lib/utils";
-import TechIcon from "./icons/TechIcon";
+import type { CollectionEntry } from "astro:content";
+import Icon from "./icons/Icon";
 
 interface Props {
-  title: string;
-  description: string;
-  technologies: { category: string; items: { name: string; icon: string }[] }[];
-  area: "primary" | "secondary" | "tertiary" | "quaternary";
+  project: CollectionEntry<'projects'>
   handleClick: () => void
 }
 
-function BentoCard({ title, description, technologies, area, handleClick }: Props) {
+function BentoCard({ project, handleClick }: Props) {
+  const { title, description, technologies, priority: area } = project.data
   return (
     <article
       role="button"
@@ -21,18 +20,18 @@ function BentoCard({ title, description, technologies, area, handleClick }: Prop
       )}
       onClick={handleClick}
     >
-
       <h2 className="title font-semibold ">{title}</h2>
-      <p className="base mt-2 ">{description}</p>
+      <p className="base mt-2">{description}</p>
       <section className="flex gap-5 mt-8">
         {
           technologies.map(({ category, items }) => (
             <div key={crypto.randomUUID()}>
-              <h3 className="font-medium ">{category}</h3>
+              <h3 className="font-medium capitalize">{category}</h3>
               <div className="flex flex-wrap gap-2 gap-y-3 mt-2">
                 {items.map(({ name, icon }) => (
-                  <TechIcon
+                  <Icon
                     key={crypto.randomUUID()}
+                    name={icon}
                     className="w-8 h-8 md:w-9 md:h-9 lg:w-12 lg:h-12"
                     aria-label={name}
                   />

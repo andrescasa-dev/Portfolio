@@ -1,52 +1,77 @@
 import { cn } from "@/lib/utils"
 import Exit from "./icons/Exit"
-import { Button } from "./ui/button"
+import { Button, buttonVariants } from "./ui/button"
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import type { CollectionEntry } from "astro:content"
+import { contentConfig, openAreas } from "@/config"
 
 
 interface Props {
-  className: string,
   handleClose: () => void
-  config?: { accordion?: string, title?: string, desc?: string }
+  project: CollectionEntry<'projects'> | null
 }
 
-function BentoContent({ className, handleClose, config }: Props) {
-  return (
-    <section className={`relative w-full h-full card flex flex-col bg-background ${className} `}>
-      <Button size={'icon'} className="absolute top-3 right-2" variant={"ghost"} onClick={handleClose}>
-        <Exit className=" w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6" />
-      </Button>
-      <h2 className={cn("title", config?.title)}>Digital hippo</h2>
-      <p className={cn("base mt-2", config?.desc)}>A Ecommerce website to Buy and Sell digital assets</p>
-      <Accordion className={cn("mt-3 md:mt-6", config?.accordion)} type="single" collapsible>
-        <AccordionItem value="item-1">
-          <AccordionTrigger>How I did it</AccordionTrigger>
-          <AccordionContent>I develop this project following the coding guidelines by Josh Tried Code. In order to advance with ease, I Reviewed the code base and analyzing the design beforehand on each feature or design implementation. When I considered necessary, I implemented my own solutions to address scalability and readability</AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="item-2">
-          <AccordionTrigger>Is it accessible?</AccordionTrigger>
-          <AccordionContent>Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="item-3">
-          <AccordionTrigger>Is it accessible?</AccordionTrigger>
-          <AccordionContent>Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
-        </AccordionItem>
-      </Accordion>
-      <div className="mt-auto flex gap-2">
-        <Button className="flex-grow" variant={"default"} >
-          Demo
+function BentoContent({ handleClose, project }: Props) {
+  if (project !== null) {
+    const { priority: area } = project.data
+    return (
+      <section className={`relative w-full h-full card flex flex-col bg-background ${openAreas[area]} `}>
+        <Button size={'icon'} className="absolute top-3 right-2" variant={"ghost"} onClick={handleClose}>
+          <Exit className=" w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6" />
         </Button>
-        <Button className="flex-grow" variant={"outline"} >
-          Code
-        </Button>
-      </div>
-    </section>
-  )
+        <h2 className={cn("title", contentConfig[area].title)}>Digital hippo</h2>
+        <p className={cn("base mt-2", contentConfig[area].desc)}>A Ecommerce website to Buy and Sell digital assets</p>
+        <Accordion className={cn("mt-3 md:mt-6", contentConfig[area].accordion)} type="single" collapsible>
+          <AccordionItem value="item-1">
+            <AccordionTrigger>Main Features</AccordionTrigger>
+            <AccordionContent>
+              <ul className="list-disc pl-6">
+                {project.data.main_features.map(features => (
+                  <li key={crypto.randomUUID()}>{features}</li>
+                ))}
+              </ul>
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-2">
+            <AccordionTrigger>Challenges</AccordionTrigger>
+            <AccordionContent>
+              <ul>
+                {project.data.challenges.map(challenge => (
+                  <li key={crypto.randomUUID()}>
+                    <h3 className="font-bold mt-2">{challenge.title}</h3>
+                    <p className="mt-1">{challenge.solution}</p>
+                  </li>
+                ))}
+              </ul>
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-3">
+            <AccordionTrigger>What I learned</AccordionTrigger>
+            <AccordionContent>
+              <ul className="list-disc pl-6">
+                {project.data.what_i_learned.map(item => (
+                  <li key={crypto.randomUUID()}>{item}</li>
+                ))}
+              </ul>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+        <div className="mt-auto flex gap-2">
+          <a target="_blank" className={cn(buttonVariants({ variant: "default" }), "flex-grow")} href={project.data.demo}>
+            Demo
+          </a>
+          <a target="_blank" className={cn(buttonVariants({ variant: "outline" }), "flex-grow")} href={project.data.code}>
+            Code
+          </a>
+        </div>
+      </section>
+    )
+  }
 }
 
 export default BentoContent

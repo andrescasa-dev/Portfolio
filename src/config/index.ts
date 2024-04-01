@@ -9,7 +9,15 @@ export const areas = {
     "[grid-area:_4_/_1_/_5_/_3] min-[370px]:[grid-area:_3_/_2_/_4_/_3] md:[grid-area:_2_/_3_/_3_/_4] lg:[grid-area:_2_/_4_/_3_/_5]",
 };
 
-export const contentConfig = {
+type ContentConfig = {
+  [key in "primary" | "secondary" | "tertiary" | "quaternary"]: {
+    title?: string,
+    desc?: string,
+    accordion?: string
+  }
+}
+
+export const contentConfig: ContentConfig = {
   primary: { title: "lg:hidden", desc: "lg:hidden" },
   secondary: { title: "lg:hidden", desc: "lg:hidden" },
   tertiary: { accordion: "hidden" },

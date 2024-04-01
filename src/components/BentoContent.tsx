@@ -61,7 +61,7 @@ function BentoContent({ handleClose, project }: Props) {
             </AccordionContent>
           </AccordionItem>
         </Accordion>
-        <div className="mt-auto flex gap-2">
+        <div className="mt-8 flex gap-2">
           <a target="_blank" className={cn(buttonVariants({ variant: "default" }), "flex-grow")} href={project.data.demo}>
             Demo
           </a>

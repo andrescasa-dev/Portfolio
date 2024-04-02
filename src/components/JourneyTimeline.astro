@@ -1,0 +1,40 @@
+---
+import { cn } from "@/lib/utils";
+import JourneyItem from "./JourneyItem.astro";
+import LineTimeline from "./LineTimeline.astro";
+
+const items: string[] = ["item1", "item2", "item3", "item4", "item5", "item6"];
+const journeyChunks: string[][] = items.reduce(
+  (chunks: string[][], _, i, arr) => {
+    return i % 2 ? [...chunks, [arr[i - 1], arr[i]]] : chunks;
+  },
+  [],
+);
+---
+
+<div>
+  {
+    journeyChunks.map(([item1, item2], i, arr) => (
+      <div
+        class={cn(
+          "grid grid-rows-3 md:grid-rows-2 lg:gap-y-0 md:grid-cols-timelineLayout sm:max-md:px-16",
+          { "grid-rows-4": i === 0 },
+        )}
+      >
+        <LineTimeline
+          class={cn("md:col-start-2", { "max-md:hidden": i !== 0 })}
+          half={i === 0 && "below"}
+        />
+        <JourneyItem class="md:col-start-3" bannerRight={i % 2 === 0} />
+        <JourneyItem
+          class="md:row-start-2 mt-2 md:mt-0"
+          bannerRight={i % 2 === 0}
+        />
+        <LineTimeline
+          class="md:row-start-2"
+          half={i === arr.length - 1 && "above"}
+        />
+      </div>
+    ))
+  }
+</div>

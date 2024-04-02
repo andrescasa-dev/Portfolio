@@ -1,0 +1,60 @@
+---
+import { cn } from "@/lib/utils";
+import { ChevronRight } from "lucide-react";
+import { Button } from "./ui/button";
+import { Image } from "astro:assets";
+import ufpsBanner from "../assets/UFPS_Logo.png";
+
+interface Props {
+  class: string;
+  bannerRight?: true | false;
+}
+
+const { bannerRight } = Astro.props;
+---
+
+<div
+  class={cn("flex flex-col xs:flex-row md:flex-col gap-2", Astro.props.class)}
+>
+  <article
+    class="p-5 md:p-8 bg-background border border-border rounded-sm flex flex-col flex-grow"
+  >
+    <header>
+      <h3 class="base">2020 - 2021I</h3>
+      <h2 class="title">An unconventional start</h2>
+    </header>
+    <main class="base mt-3">
+      <ul class="list">
+        <li>3 semester fo Systems Engineering y quit</li>
+        <li>Fundamentals of software engineer</li>
+        <li>B2 IELTS</li>
+      </ul>
+    </main>
+    <footer class="base flex justify-end">
+      <Button variant={"ghost"} className="text-accent"
+        >Know more <ChevronRight aria-hidden="true" /></Button
+      >
+    </footer>
+  </article>
+  <div
+    class={cn(
+      "flex xs:flex-col sm:flex-col md:flex-row p-2 md:p-4 border border-border gap-3 rounded-sm w-fit h-fit",
+      { "xs:-order-1 md:order-1": bannerRight },
+      { "self-end xs:self-auto": bannerRight },
+    )}
+  >
+    <Image
+      src={ufpsBanner}
+      alt={"the logo of the university i attended"}
+      width={32}
+      height={32}
+    />
+    <div aria-hidden="true" class="w-px h-[90%] bg-border rounded-lg"></div>
+    <Image
+      src={ufpsBanner}
+      alt={"the logo of the university i attended"}
+      width={32}
+      height={32}
+    />
+  </div>
+</div>

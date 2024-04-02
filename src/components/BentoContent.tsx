@@ -30,7 +30,7 @@ function BentoContent({ handleClose, project }: Props) {
           <AccordionItem value="item-1">
             <AccordionTrigger>Main Features</AccordionTrigger>
             <AccordionContent>
-              <ul className="list-disc pl-6">
+              <ul className="list">
                 {project.data.main_features.map(features => (
                   <li key={crypto.randomUUID()}>{features}</li>
                 ))}
@@ -53,7 +53,7 @@ function BentoContent({ handleClose, project }: Props) {
           <AccordionItem value="item-3">
             <AccordionTrigger>What I learned</AccordionTrigger>
             <AccordionContent>
-              <ul className="list-disc pl-6">
+              <ul className="list">
                 {project.data.what_i_learned.map(item => (
                   <li key={crypto.randomUUID()}>{item}</li>
                 ))}

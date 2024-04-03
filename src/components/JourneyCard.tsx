@@ -25,8 +25,8 @@ function JourneyCard() {
       className="p-5 md:p-8 bg-background border border-border rounded-sm flex flex-col xs:max-md:flex-grow h-fit"
     >
       <header>
-        <h3 className="base">2020 - 2021I</h3>
-        <h2 className="title">An unconventional start</h2>
+        <h3 className="clarification">2020 - 2021I</h3>
+        <h2 className="title mt-2">An unconventional start</h2>
       </header>
       <section className="base mt-3">
         {isOpen ? <Content /> : <Highlights />}

@@ -87,6 +87,10 @@
     @apply text-sm md:text-base
   }
 
+  .clarification {
+    @apply text-xs md:text-sm opacity-60
+  }
+
   .card {
     @apply border border-border rounded-sm px-4 py-7 md:px-7 md:py-10
   }

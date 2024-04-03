@@ -32,7 +32,7 @@ function BentoCard({ project, handleClick }: Props) {
                   <Icon
                     key={crypto.randomUUID()}
                     name={icon}
-                    className="w-8 h-8 md:w-9 md:h-9 lg:w-12 lg:h-12"
+                    className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10"
                     aria-label={name}
                   />
                 ))}

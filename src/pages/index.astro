@@ -1,13 +1,129 @@
 ---
 import Hero from "@/components/Hero.astro";
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Section from "@/components/Section.astro";
-import ProjectsBento from "@/components/ProjectsBento";
-import { getCollection } from "astro:content";
-import JourneyTimeline from "@/components/Journey.astro";
 import Hobbies from "@/components/Hobbies.astro";
+import JourneyTimeline from "@/components/Journey.astro";
+import ProjectsBento from "@/components/ProjectsBento";
+import Section from "@/components/Section.astro";
+import TabsReact from "@/components/TabsReact";
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const projects = await getCollection("projects");
+const skillLifeCycle = [
+	{
+		learningPhase: "mastered" as const,
+		categories: [
+			{
+				category: "frontend",
+				skillSet: [
+					{
+						iconName: "TechIcon",
+						title: "TRPC",
+						clarification: "Under the hood",
+					},
+					{ iconName: "TechIcon", title: "TRPC" },
+					{
+						iconName: "TechIcon",
+						title: "TRPC",
+						clarification: "Under the hood",
+					},
+					{ iconName: "TechIcon", title: "TRPC" },
+					{ iconName: "TechIcon", title: "TRPC" },
+					{
+						iconName: "TechIcon",
+						title: "TRPC",
+						clarification: "Under the hood",
+					},
+				],
+			},
+			{
+				category: "backend",
+				skillSet: [
+					{
+						iconName: "TechIcon",
+						title: "TRPC",
+						clarification: "Under the hood",
+					},
+					{ iconName: "TechIcon", title: "TRPC" },
+					{
+						iconName: "TechIcon",
+						title: "TRPC",
+						clarification: "Under the hood",
+					},
+				],
+			},
+			{
+				category: "design",
+				skillSet: [
+					{
+						iconName: "TechIcon",
+						title: "TRPC",
+						clarification: "Under the hood",
+					},
+					{ iconName: "TechIcon", title: "TRPC" },
+				],
+			},
+			{
+				category: "tools",
+				skillSet: [
+					{
+						iconName: "TechIcon",
+						title: "TRPC",
+						clarification: "Under the hood",
+					},
+					{ iconName: "TechIcon", title: "TRPC" },
+					{ iconName: "TechIcon", title: "TRPC" },
+					{ iconName: "TechIcon", title: "TRPC" },
+				],
+			},
+		],
+	},
+	{
+		learningPhase: "learning" as const,
+		categories: [
+			{
+				category: "backend",
+				skillSet: [
+					{
+						iconName: "TechIcon",
+						title: "TRPC",
+						clarification: "Under the hood",
+					},
+					{ iconName: "TechIcon", title: "TRPC" },
+					{
+						iconName: "TechIcon",
+						title: "TRPC",
+						clarification: "Under the hood",
+					},
+				],
+			},
+			{
+				category: "design",
+				skillSet: [
+					{
+						iconName: "TechIcon",
+						title: "TRPC",
+						clarification: "Under the hood",
+					},
+					{ iconName: "TechIcon", title: "TRPC" },
+				],
+			},
+			{
+				category: "tools",
+				skillSet: [
+					{
+						iconName: "TechIcon",
+						title: "TRPC",
+						clarification: "Under the hood",
+					},
+					{ iconName: "TechIcon", title: "TRPC" },
+					{ iconName: "TechIcon", title: "TRPC" },
+					{ iconName: "TechIcon", title: "TRPC" },
+				],
+			},
+		],
+	},
+];
 ---
 
 <BaseLayout>
@@ -19,7 +135,10 @@ const projects = await getCollection("projects");
 		<Section title="My Journey">
 			<JourneyTimeline />
 		</Section>
-		<Section title="My Journey">
+		<Section title="My skills">
+			<TabsReact skillLifeCycle={skillLifeCycle} client:visible />
+		</Section>
+		<Section title="My Hobbies">
 			<Hobbies hobbies={[{}, {}, {}]} />
 		</Section>
 	</main>

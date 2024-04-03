@@ -5,6 +5,7 @@ import Section from "@/components/Section.astro";
 import ProjectsBento from "@/components/ProjectsBento";
 import { getCollection } from "astro:content";
 import JourneyTimeline from "@/components/Journey.astro";
+import Hobbies from "@/components/Hobbies.astro";
 
 const projects = await getCollection("projects");
 ---
@@ -12,11 +13,14 @@ const projects = await getCollection("projects");
 <BaseLayout>
 	<main class="grid grid-cols-mainLayout pb-8">
 		<Hero />
-		<Section title="Projects">
+		<Section title="My Projects">
 			<ProjectsBento myProjects={projects} client:load />
 		</Section>
 		<Section title="My Journey">
 			<JourneyTimeline />
+		</Section>
+		<Section title="My Journey">
+			<Hobbies hobbies={[{}, {}, {}]} />
 		</Section>
 	</main>
 </BaseLayout>

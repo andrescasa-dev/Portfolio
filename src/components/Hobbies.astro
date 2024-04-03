@@ -1,0 +1,26 @@
+---
+interface Props {
+  hobbies: {}[];
+}
+
+const { hobbies } = Astro.props;
+---
+
+<div class="flex gap-4 flex-wrap">
+  {
+    hobbies.map(() => (
+      <a href="#" class="flex-grow">
+        <article class="px-4 py-9 rounded-sm bg-gray-800 h-[16em] flex flex-col justify-end">
+          <header>
+            <h1 class="title">Piano</h1>
+          </header>
+          <section class="mt-2">
+            <p class="base">
+              I find calm and progress in a self-taught manner.
+            </p>
+          </section>
+        </article>
+      </a>
+    ))
+  }
+</div>

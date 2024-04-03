@@ -28,9 +28,9 @@ function JourneyCard() {
         <h3 className="base">2020 - 2021I</h3>
         <h2 className="title">An unconventional start</h2>
       </header>
-      <main className="base mt-3">
+      <section className="base mt-3">
         {isOpen ? <Content /> : <Highlights />}
-      </main>
+      </section>
       <footer className="base flex justify-end">
         {isOpen
           ? <Button variant={"ghost"} className="text-accent" onClick={() => setIsOpen((prev) => !prev)}>

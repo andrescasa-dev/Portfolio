@@ -1,35 +1,35 @@
-import { ChevronRight } from "lucide-react"
-import { Button } from "./ui/button"
-import { useState } from "react"
+import type { CollectionEntry } from "astro:content";
+import { ChevronRight } from "lucide-react";
+import { useState, type ReactNode } from "react";
+import { Button } from "./ui/button";
 
-function JourneyCard() {
+interface Props {
+  journeyPeriod: CollectionEntry<"journeyPeriods">,
+  children: ReactNode
+}
+
+function JourneyCard({ journeyPeriod, children: content }: Props) {
   const [isOpen, setIsOpen] = useState<false | true>(false)
 
-  const Highlights = () => (
-    <ul className="list">
-      <li>3 semester fo Systems Engineering y quit</li>
-      <li>Fundamentals of software engineer</li>
-      <li>B2 IELTS</li>
-    </ul>
-  )
+  const { period: periodLabel, title, highlights } = journeyPeriod.data
 
-  const Content = () => (
-    <p>
-      I studied 3 semesters of Systems Engineering at UFPS, where I acquired the fundamentals: POO, data structures, and clean code. However, I felt that what I was studying A no purpose, the curriculum did not fit the industry needs. most of the time they were not code related subjects.
-      I decided to leave the university and try a more modern approach achieve my goal. Also during this time I got the B2 IELTS certification
-    </p>
-  )
 
   return (
     <article
       className="p-5 md:p-8 bg-background border border-border rounded-sm flex flex-col xs:max-md:flex-grow h-fit"
     >
       <header>
-        <h3 className="clarification">2020 - 2021I</h3>
-        <h2 className="title mt-2">An unconventional start</h2>
+        <h3 className="clarification">{periodLabel}</h3>
+        <h2 className="title mt-2">{title}</h2>
       </header>
-      <section className="base mt-3">
-        {isOpen ? <Content /> : <Highlights />}
+      <section className="base mt-3 content">
+        {isOpen
+          ? content
+          : <ul id="highlights" className="list">
+            {highlights.map((item) => (
+              <li key={crypto.randomUUID()}>{item}</li>
+            ))}
+          </ul>}
       </section>
       <footer className="base flex justify-end">
         {isOpen

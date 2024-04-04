@@ -3,19 +3,25 @@ import { cn } from "@/lib/utils";
 import { Image } from "astro:assets";
 import ufpsBanner from "../assets/UFPS_Logo.png";
 import JourneyCard from "./JourneyCard";
+import type { CollectionEntry } from "astro:content";
 
 interface Props {
-  class: string;
+  class?: string;
   bannerRight?: true | false;
+  journeyPeriod: CollectionEntry<"journeyPeriods">;
 }
 
-const { bannerRight } = Astro.props;
+const { bannerRight, journeyPeriod } = Astro.props;
+
+const { Content } = await journeyPeriod.render();
 ---
 
 <div
   class={cn("flex flex-col xs:flex-row md:flex-col gap-2", Astro.props.class)}
 >
-  <JourneyCard client:load />
+  <JourneyCard journeyPeriod={journeyPeriod} client:load>
+    <Content />
+  </JourneyCard>
   <div
     class={cn(
       "flex xs:flex-col sm:flex-col md:flex-row p-2 md:p-4 border border-border gap-3 rounded-sm w-fit h-fit flex-shrink-0",

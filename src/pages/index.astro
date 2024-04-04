@@ -132,14 +132,14 @@ const skillLifeCycle = [
 		<Section title="My Projects">
 			<ProjectsBento myProjects={projects} client:load />
 		</Section>
-		<Section title="My Journey">
-			<JourneyTimeline />
-		</Section>
 		<Section title="My skills">
 			<TabsReact skillLifeCycle={skillLifeCycle} client:visible />
 		</Section>
+		<Section title="My Journey">
+			<JourneyTimeline />
+		</Section>
 		<Section title="My Hobbies">
-			<Hobbies hobbies={[{}, {}, {}]} />
+			<Hobbies />
 		</Section>
 	</main>
 </BaseLayout>

@@ -105,3 +105,11 @@
   grid-column-start: 2;
   grid-column-end: -2;
 }
+
+.content strong {
+  color: hsla(var(--accent));
+}
+
+.content p+p {
+  margin-top: 1em;
+}

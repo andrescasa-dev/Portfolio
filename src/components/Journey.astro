@@ -1,39 +1,42 @@
 ---
 import { cn } from "@/lib/utils";
 import JourneyItem from "./JourneyItem.astro";
-import LineTimeline from "./JourneyTimelineCircle.astro";
+import Circle from "./JourneyTimelineCircle.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 
-const items: string[] = ["item1", "item2", "item3", "item4", "item5", "item6"];
-const journeyChunks: string[][] = items.reduce(
-  (chunks: string[][], _, i, arr) => {
-    return i % 2 ? [...chunks, [arr[i - 1], arr[i]]] : chunks;
-  },
-  [],
-);
+const periods = await getCollection("journeyPeriods");
+console.log(periods);
+
+// preiods has the following type: [[period,period]...]
+const periodsGroup = periods.reduce<
+  Array<[(typeof periods)[0], (typeof periods)[0]]>
+>((chunks, _, i, arr) => {
+  return i % 2 ? [...chunks, [arr[i - 1], arr[i]]] : chunks;
+}, []);
 ---
 
 <div class="relative">
   {
-    journeyChunks.map(([item1, item2], i, arr) => (
+    periodsGroup.map(([period1, period2], i, arr) => (
       <div
         class={cn(
           "grid grid-rows-3 md:grid-rows-2 lg:gap-y-0 md:grid-cols-timelineLayout sm:max-md:px-16",
           { "grid-rows-4": i === 0 },
         )}
       >
-        <LineTimeline
-          class={cn("md:col-start-2", { "max-md:hidden": i !== 0 })}
-          half={i === 0 && "below"}
-        />
-        <JourneyItem class="md:col-start-3" bannerRight={i % 2 === 0} />
+        <Circle class={cn("md:col-start-2", { "max-md:hidden": i !== 0 })} />
         <JourneyItem
+          journeyPeriod={period1}
+          class="md:col-start-3"
+          bannerRight={i % 2 === 0}
+        />
+        <JourneyItem
+          journeyPeriod={period2}
           class="md:row-start-2 mt-2 md:mt-0"
           bannerRight={i % 2 === 0}
         />
-        <LineTimeline
-          class="md:row-start-2"
-          half={i === arr.length - 1 && "above"}
-        />
+        <Circle class="md:row-start-2" />
       </div>
     ))
   }

@@ -1,9 +1,8 @@
 ---
 import { cn } from "@/lib/utils";
-import { Image } from "astro:assets";
-import ufpsBanner from "../assets/UFPS_Logo.png";
-import JourneyCard from "./JourneyCard";
 import type { CollectionEntry } from "astro:content";
+import JourneyCard from "./JourneyCard";
+import JourneyItemBanner from "./JourneyItemBanner.astro";
 
 interface Props {
   class?: string;
@@ -22,25 +21,5 @@ const { Content } = await journeyPeriod.render();
   <JourneyCard journeyPeriod={journeyPeriod} client:load>
     <Content />
   </JourneyCard>
-  <div
-    class={cn(
-      "flex xs:flex-col sm:flex-col md:flex-row p-2 md:p-4 border border-border gap-3 rounded-sm w-fit h-fit flex-shrink-0",
-      { "xs:-order-1 md:order-1": bannerRight },
-      { "self-end xs:self-auto": bannerRight },
-    )}
-  >
-    <Image
-      src={ufpsBanner}
-      alt={"the logo of the university i attended"}
-      width={32}
-      height={32}
-    />
-    <div aria-hidden="true" class="w-px h-[90%] bg-border rounded-lg"></div>
-    <Image
-      src={ufpsBanner}
-      alt={"the logo of the university i attended"}
-      width={32}
-      height={32}
-    />
-  </div>
+  <JourneyItemBanner journeyPeriod={journeyPeriod} bannerRight={bannerRight} />
 </div>

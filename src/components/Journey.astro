@@ -1,12 +1,10 @@
 ---
 import { cn } from "@/lib/utils";
+import { getCollection } from "astro:content";
 import JourneyItem from "./JourneyItem.astro";
 import Circle from "./JourneyTimelineCircle.astro";
-import { getCollection } from "astro:content";
-import type { CollectionEntry } from "astro:content";
 
 const periods = await getCollection("journeyPeriods");
-console.log(periods);
 
 // preiods has the following type: [[period,period]...]
 const periodsGroup = periods.reduce<

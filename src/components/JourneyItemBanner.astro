@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets";
+import { cn } from "@/lib/utils";
+import type { CollectionEntry } from "astro:content";
+interface Props {
+  bannerRight?: true | false;
+  journeyPeriod: CollectionEntry<"journeyPeriods">;
+}
+
+const { journeyPeriod, bannerRight } = Astro.props;
+const importAssetObj = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/*.{png,jpg,avif,webp}",
+);
+---
+
+<div
+  class={cn(
+    "flex xs:flex-col sm:flex-col md:flex-row p-2 md:p-4 border border-border gap-3 rounded-sm w-fit h-fit flex-shrink-0",
+    { "xs:-order-1 md:order-1": bannerRight },
+    { "self-end xs:self-auto": bannerRight },
+  )}
+>
+  {
+    journeyPeriod.data.banners.map(({ alt, src }, i) => (
+      <>
+        {i !== 0 && (
+          <div aria-hidden="true" class="w-px h-[90%] bg-border rounded-lg" />
+        )}
+        <Image src={importAssetObj[src]()} alt={alt} width={32} height={32} />
+      </>
+    ))
+  }
+</div>

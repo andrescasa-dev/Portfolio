@@ -1,12 +1,18 @@
 ---
+import { getImage } from "astro:assets";
+import pianoImage from "../assets/piano.jpg";
 const hobbies = [{}, {}, {}];
+const backgroundImage = await getImage({ src: pianoImage, format: "avif" });
 ---
 
 <div class="flex gap-4 flex-wrap">
   {
     hobbies.map(() => (
       <a href="#" class="flex-grow">
-        <article class="px-4 py-9 rounded-sm bg-gray-800 h-[16em] flex flex-col justify-end">
+        <article
+          style={`background-image: linear-gradient(0deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0) 100%), url('${backgroundImage.src}')`}
+          class={`px-4 py-9 rounded-sm h-[16em] flex flex-col justify-end article-background bg-cover bg-center bg-no-repeat`}
+        >
           <header>
             <h1 class="title">Piano</h1>
           </header>

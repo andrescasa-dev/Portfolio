@@ -80,7 +80,7 @@
   }
 
   .subtitle {
-    @apply font-semibold text-xs md:text-sm
+    @apply font-semibold text-base md:text-xl lg:text-2xl
   }
 
   .base {

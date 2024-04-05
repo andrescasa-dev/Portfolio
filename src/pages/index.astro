@@ -4,136 +4,22 @@ import Hobbies from "@/components/Hobbies.astro";
 import JourneyTimeline from "@/components/Journey.astro";
 import ProjectsBento from "@/components/ProjectsBento";
 import Section from "@/components/Section.astro";
-import TabsReact from "@/components/TabsReact";
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import MySkills from "@/components/MySkills";
 
 const projects = await getCollection("projects");
-const skillLifeCycle = [
-	{
-		learningPhase: "mastered" as const,
-		categories: [
-			{
-				category: "frontend",
-				skillSet: [
-					{
-						iconName: "TechIcon",
-						title: "TRPC",
-						clarification: "Under the hood",
-					},
-					{ iconName: "TechIcon", title: "TRPC" },
-					{
-						iconName: "TechIcon",
-						title: "TRPC",
-						clarification: "Under the hood",
-					},
-					{ iconName: "TechIcon", title: "TRPC" },
-					{ iconName: "TechIcon", title: "TRPC" },
-					{
-						iconName: "TechIcon",
-						title: "TRPC",
-						clarification: "Under the hood",
-					},
-				],
-			},
-			{
-				category: "backend",
-				skillSet: [
-					{
-						iconName: "TechIcon",
-						title: "TRPC",
-						clarification: "Under the hood",
-					},
-					{ iconName: "TechIcon", title: "TRPC" },
-					{
-						iconName: "TechIcon",
-						title: "TRPC",
-						clarification: "Under the hood",
-					},
-				],
-			},
-			{
-				category: "design",
-				skillSet: [
-					{
-						iconName: "TechIcon",
-						title: "TRPC",
-						clarification: "Under the hood",
-					},
-					{ iconName: "TechIcon", title: "TRPC" },
-				],
-			},
-			{
-				category: "tools",
-				skillSet: [
-					{
-						iconName: "TechIcon",
-						title: "TRPC",
-						clarification: "Under the hood",
-					},
-					{ iconName: "TechIcon", title: "TRPC" },
-					{ iconName: "TechIcon", title: "TRPC" },
-					{ iconName: "TechIcon", title: "TRPC" },
-				],
-			},
-		],
-	},
-	{
-		learningPhase: "learning" as const,
-		categories: [
-			{
-				category: "backend",
-				skillSet: [
-					{
-						iconName: "TechIcon",
-						title: "TRPC",
-						clarification: "Under the hood",
-					},
-					{ iconName: "TechIcon", title: "TRPC" },
-					{
-						iconName: "TechIcon",
-						title: "TRPC",
-						clarification: "Under the hood",
-					},
-				],
-			},
-			{
-				category: "design",
-				skillSet: [
-					{
-						iconName: "TechIcon",
-						title: "TRPC",
-						clarification: "Under the hood",
-					},
-					{ iconName: "TechIcon", title: "TRPC" },
-				],
-			},
-			{
-				category: "tools",
-				skillSet: [
-					{
-						iconName: "TechIcon",
-						title: "TRPC",
-						clarification: "Under the hood",
-					},
-					{ iconName: "TechIcon", title: "TRPC" },
-					{ iconName: "TechIcon", title: "TRPC" },
-					{ iconName: "TechIcon", title: "TRPC" },
-				],
-			},
-		],
-	},
-];
+const MySkillsData = await getCollection("skills");
 ---
 
 <BaseLayout>
 	<main class="grid grid-cols-mainLayout pb-8">
 		<Hero />
 		<Section title="My Projects">
-			<ProjectsBento myProjects={projects} client:load />
+			<ProjectsBento client:load myProjects={projects} />
 		</Section>
 		<Section title="My skills">
-			<TabsReact skillLifeCycle={skillLifeCycle} client:visible />
+			<MySkills client:visible skillLifeCycle={MySkillsData} />
 		</Section>
 		<Section title="My Journey">
 			<JourneyTimeline />

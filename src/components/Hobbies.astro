@@ -1,28 +1,40 @@
 ---
 import { getImage } from "astro:assets";
-import pianoImage from "../assets/piano.jpg";
-const hobbies = [{}, {}, {}];
-const backgroundImage = await getImage({ src: pianoImage, format: "avif" });
+import { getCollection } from "astro:content";
+
+const hobbies = await getCollection("hobbies");
+const importImagesObj = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/hobbies/*.{png,jpg,webp,avif}",
+);
 ---
 
 <div class="flex gap-4 flex-wrap">
   {
-    hobbies.map(() => (
-      <a href="#" class="flex-grow">
-        <article
-          style={`background-image: linear-gradient(0deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0) 100%), url('${backgroundImage.src}')`}
-          class={`px-4 py-9 rounded-sm h-[16em] flex flex-col justify-end article-background bg-cover bg-center bg-no-repeat`}
-        >
-          <header>
-            <h1 class="title">Piano</h1>
-          </header>
-          <section class="mt-2">
-            <p class="base">
-              I find calm and progress in a self-taught manner.
-            </p>
-          </section>
-        </article>
-      </a>
-    ))
+    await Promise.all(
+      hobbies.map(async (hobbie) => {
+        const { bgImage, title } = hobbie.data;
+        const backgroundImage = await getImage({
+          src: importImagesObj[bgImage](),
+          format: "avif",
+        });
+        const { Content } = await hobbie.render();
+
+        return (
+          <a href="#" class="flex-grow">
+            <article
+              style={`background-image: linear-gradient(0deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0) 100%), url('${backgroundImage.src}')`}
+              class={`px-4 py-9 rounded-sm h-[16em] flex flex-col justify-end article-background bg-cover bg-center bg-no-repeat`}
+            >
+              <header>
+                <h1 class="title">{title}</h1>
+              </header>
+              <section class="mt-2 content base">
+                <Content />
+              </section>
+            </article>
+          </a>
+        );
+      }),
+    )
   }
 </div>

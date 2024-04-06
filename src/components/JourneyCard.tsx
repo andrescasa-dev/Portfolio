@@ -22,7 +22,7 @@ function JourneyCard({ journeyPeriod, children: content }: Props) {
         <h3 className="clarification">{periodLabel}</h3>
         <h2 className="title mt-2">{title}</h2>
       </header>
-      <section className="base mt-3 content">
+      <section className="base mt-3 content leading-relaxed">
         {isOpen
           ? content
           : <ul id="highlights" className="list">
@@ -37,7 +37,7 @@ function JourneyCard({ journeyPeriod, children: content }: Props) {
             <ChevronRight className="rotate-180" aria-hidden="true" /> Back
           </Button>
           : <Button variant={"ghost"} className="text-accent" onClick={() => setIsOpen((prev) => !prev)}>
-            Know more <ChevronRight aria-hidden="true" />
+            Know More <ChevronRight aria-hidden="true" />
           </Button>
         }
       </footer>

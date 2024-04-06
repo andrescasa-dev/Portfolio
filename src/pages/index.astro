@@ -12,7 +12,6 @@ const projects = await getCollection("projects");
 const MySkillsData = await getCollection("skills");
 const test = await getCollection("test");
 const renderedTest = await test[0].render();
-console.log(renderedTest.headings[0]);
 ---
 
 <BaseLayout>

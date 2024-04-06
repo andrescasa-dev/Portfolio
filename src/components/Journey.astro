@@ -6,11 +6,17 @@ import Circle from "./JourneyTimelineCircle.astro";
 
 const periods = await getCollection("journeyPeriods");
 
-// preiods has the following type: [[period,period]...]
+// transform and arr into the following structure: [[period,period]...]
 const periodsGroup = periods.reduce<
-  Array<[(typeof periods)[0], (typeof periods)[0]]>
+  Array<[(typeof periods)[0], (typeof periods)[0]] | [(typeof periods)[0]]>
 >((chunks, _, i, arr) => {
-  return i % 2 ? [...chunks, [arr[i - 1], arr[i]]] : chunks;
+  if (i % 2) {
+    return [...chunks, [arr[i - 1], arr[i]]];
+  } else if (i === arr.length - 1 && arr.length % 2 !== 0) {
+    return [...chunks, [arr[i]]];
+  } else {
+    return chunks;
+  }
 }, []);
 ---
 
@@ -29,12 +35,15 @@ const periodsGroup = periods.reduce<
           class="md:col-start-3"
           bannerRight={i % 2 === 0}
         />
-        <JourneyItem
-          journeyPeriod={period2}
-          class="md:row-start-2 mt-2 md:mt-0"
-          bannerRight={i % 2 === 0}
-        />
-        <Circle class="md:row-start-2" />
+        {period2 && (
+          <JourneyItem
+            journeyPeriod={period2}
+            class="md:row-start-2 mt-2 md:mt-0"
+            bannerRight={i % 2 === 0}
+          />
+          <Circle class="md:row-start-2" />
+        )}
+        
       </div>
     ))
   }

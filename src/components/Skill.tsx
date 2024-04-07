@@ -12,7 +12,7 @@ interface Props {
 function Skill({ clarification, iconName, title }: Props) {
   return (
     <div
-      className="px-0 py-4 border border-border rounded-md bg-background flex flex-col items-center"
+      className="px-0 py-4  border border-border rounded-md bg-background flex flex-col items-center"
     >
       <Icon className="w-10 h-10" name={iconName} />
       <h3 className="base mt-2">{title}</h3>

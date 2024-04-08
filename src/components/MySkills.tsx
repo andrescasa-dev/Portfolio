@@ -1,45 +1,28 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import Skill from "./Skill";
 import type { CollectionEntry } from "astro:content";
+import SkillCategorizedGrid from "./SkillCategorizedGrid";
+import SkillsWithFilter from "./SkillsWithFilter";
 
 interface Props {
   skillLifeCycle: CollectionEntry<"skills">[]
 }
 
-
-function MySkills({ skillLifeCycle }: Props) {
+function MySkills({ skillLifeCycle: skills }: Props) {
+  const wantToLearn = skills.find(({ id }) => id === "want_to_learn")!
+  const mySkills = skills.filter(({ id }) => id !== "want_to_learn")
   return (
-    <Tabs defaultValue="mastered" className="w-full grid">
+    <Tabs defaultValue="all_my_skills" className="w-full grid">
       <TabsList className="justify-self-center mb-8">
-        {
-          skillLifeCycle.sort((a, b) => a.data.order - b.data.order).map(({ data: { learningPhase } }) => (
-            <TabsTrigger key={crypto.randomUUID()} className="capitalize" value={learningPhase}>{learningPhase}</TabsTrigger>
-          ))
-        }
+        <TabsTrigger className="capitalize" value={"all_my_skills"}>All My Skills</TabsTrigger>
+        <TabsTrigger className="capitalize" value={"want_to_learn"}>want to learn</TabsTrigger>
       </TabsList>
-      {skillLifeCycle.map(({ data: { learningPhase, categories } }) => (
-        <TabsContent value={learningPhase} key={crypto.randomUUID()}>
-          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-            {categories.map(({ category, skillSet }) => (
-              <section className="flex flex-col" key={crypto.randomUUID()} >
-                <h2 className="title capitalize">{category}</h2>
-                <div className="bg-muted rounded-lg flex-grow  mt-6">
-                  <div className="grid grid-cols-[repeat(auto-fill,_minmax(117px,_1fr))] gap-2 ">
-                    {skillSet.map(({ clarification, iconName, name }) => (
-                      <Skill
-                        key={crypto.randomUUID()}
-                        iconName={iconName}
-                        title={name}
-                        clarification={clarification}
-                      />
-                    ))}
-                  </div>
-                </div>
-              </section>
-            ))}
-          </div>
-        </TabsContent>
-      ))}
+      <TabsContent value={"all_my_skills"}>
+        <SkillsWithFilter skills={mySkills} />
+      </TabsContent>
+      <TabsContent value={"want_to_learn"}>
+        <SkillCategorizedGrid categories={wantToLearn?.data.categories} />
+      </TabsContent>
+
     </Tabs>
   )
 }

@@ -21,7 +21,7 @@ const renderedTest = await test[0].render();
 			<ProjectsBento client:load myProjects={projects} />
 		</Section>
 		<Section title="My skills">
-			<MySkills client:visible skillLifeCycle={MySkillsData} />
+			<MySkills client:load skillLifeCycle={MySkillsData} />
 		</Section>
 		<Section title="My Journey">
 			<JourneyTimeline />

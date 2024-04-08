@@ -12,7 +12,7 @@ const importImagesObj = import.meta.glob<{ default: ImageMetadata }>(
   {
     await Promise.all(
       hobbies.map(async (hobbie) => {
-        const { bgImage, title } = hobbie.data;
+        const { bgImage, title, href } = hobbie.data;
         const backgroundImage = await getImage({
           src: importImagesObj[bgImage](),
           format: "avif",
@@ -20,9 +20,9 @@ const importImagesObj = import.meta.glob<{ default: ImageMetadata }>(
         const { Content } = await hobbie.render();
 
         return (
-          <a href="#" class="flex-grow">
+          <a href={href} target="_blank" class="flex-grow">
             <article
-              style={`background-image: linear-gradient(0deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0) 100%), url('${backgroundImage.src}')`}
+              style={`background-image: linear-gradient(0deg, rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.60) 100%), url('${backgroundImage.src}')`}
               class={`px-4 py-9 rounded-sm h-[16em] flex flex-col justify-end article-background bg-cover bg-center bg-no-repeat`}
             >
               <header>

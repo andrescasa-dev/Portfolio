@@ -2,6 +2,11 @@
 import { Image } from "astro:assets";
 import { cn } from "@/lib/utils";
 import type { CollectionEntry } from "astro:content";
+import { Dialog } from "./ui/dialog";
+import { DialogTrigger } from "./ui/dialog";
+import { DialogContent } from "./ui/dialog";
+import { DialogHeader } from "./ui/dialog";
+import BannerDialog from "./BannerDialog";
 interface Props {
   bannerRight?: true | false;
   journeyPeriod: CollectionEntry<"journeyPeriods">;
@@ -13,37 +18,58 @@ const importAssetObj = import.meta.glob<{ default: ImageMetadata }>(
 );
 ---
 
-<div
-  class={cn(
-    "flex xs:flex-col sm:flex-col md:flex-row p-2 border border-border gap-3 rounded-sm w-fit h-fit flex-shrink-0 bg-background",
-    { "xs:-order-1 md:order-1": bannerRight },
-    { "self-end xs:self-auto": bannerRight },
-  )}
->
-  {
-    journeyPeriod.data.banners.map(({ alt, src }, i) => {
-      const importAsset = importAssetObj[src];
-      if (!importAsset) console.error("not such an image, src:", src);
-      return (
-        <>
-          {i !== 0 && (
-            <div aria-hidden="true" class="w-px h-[90%] bg-border rounded-lg" />
-          )}
-          <div class="overflow-clip h-14 w-14">
-            {importAsset && (
-              <Image
-                src={importAsset()}
-                alt={alt}
-                width={168}
-                format="avif"
-                quality={"max"}
-                height={168}
-                class={"w-full h-full object-cover"}
+{
+  journeyPeriod.data.banners.length > 0 && (
+    <div
+      class={cn(
+        "flex xs:flex-col sm:flex-col md:flex-row p-2 border border-border gap-3 rounded-sm w-fit h-fit flex-shrink-0 bg-background",
+        { "xs:-order-1 md:order-1": bannerRight },
+        { "self-end xs:self-auto": bannerRight },
+      )}
+    >
+      {journeyPeriod.data.banners.map(({ alt, src, link }, i) => {
+        const importAsset = importAssetObj[src];
+        if (!importAsset) console.error("not such an image, src:", src);
+        return (
+          <>
+            {i !== 0 && (
+              <div
+                aria-hidden="true"
+                class="w-px h-[90%] bg-border rounded-lg"
               />
             )}
-          </div>
-        </>
-      );
-    })
-  }
-</div>
+            <div class="grid place-items-center overflow-clip">
+              {importAsset && (
+                //@ts-expect-error
+                <BannerDialog link={link} client:load title={alt}>
+                  <Image
+                    slot="thumbnail"
+                    src={importAsset()}
+                    alt={alt}
+                    width={60}
+                    format="avif"
+                    densities={[2]}
+                    quality={"max"}
+                    height={42}
+                    class={"w-full h-full object-cover"}
+                    tabindex={0}
+                  />
+                  <Image
+                    class="bg-muted rounded-md"
+                    slot="fullImage"
+                    src={importAsset()}
+                    alt={alt}
+                    densities={[1.2]}
+                    width={462}
+                    height={323}
+                    format="avif"
+                  />
+                </BannerDialog>
+              )}
+            </div>
+          </>
+        );
+      })}
+    </div>
+  )
+}

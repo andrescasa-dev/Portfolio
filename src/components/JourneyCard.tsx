@@ -17,6 +17,7 @@ function JourneyCard({ journeyPeriod, children: content }: Props) {
   return (
     <article
       className="p-5 md:p-8 bg-background border border-border rounded-sm flex flex-col xs:max-md:flex-grow h-fit"
+      tabIndex={0}
     >
       <header>
         <h3 className="clarification">{periodLabel}</h3>

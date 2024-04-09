@@ -33,7 +33,7 @@ function SkillsWithFilter({ skills }: Props) {
           <DropdownMenuRadioGroup value={filteredBy} onValueChange={setFilteredBy}>
             {[{ id: 'all', data: { order: 0 } }, ...skills].sort((a, b) => a.data.order - b.data.order).map((skill) => (
               <DropdownMenuRadioItem value={skill.id} key={crypto.randomUUID()} >
-                <Button className="w-full capitalize" variant={'ghost'}>{skill.id}</Button>
+                <Button className="w-full capitalize flex items-center" variant={'ghost'}>{skill.id}</Button>
               </DropdownMenuRadioItem>
             ))}
           </DropdownMenuRadioGroup>

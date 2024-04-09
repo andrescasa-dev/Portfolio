@@ -15,6 +15,7 @@ const importImagesObj = import.meta.glob<{ default: ImageMetadata }>(
         const { bgImage, title, href } = hobbie.data;
         const backgroundImage = await getImage({
           src: importImagesObj[bgImage](),
+          width: 720,
           format: "avif",
         });
         const { Content } = await hobbie.render();

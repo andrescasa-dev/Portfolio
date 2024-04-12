@@ -1,8 +1,9 @@
 ---
 import { Icon } from "astro-icon/components";
 import { Button } from "../components/ui/button";
-import Image from "astro/components/Image.astro";
 import Email from "./icons/Email";
+import portrait from "src/assets/hero/portrait.png";
+import { Image } from "astro:assets";
 
 const contactMeItems = [];
 ---
@@ -15,9 +16,10 @@ const contactMeItems = [];
 	>
 		<Image
 			class="mt-auto mx-auto -z-10 md:block lg:max-w-none"
-			src="/portrait.png"
-			width={534.93}
-			height={556.76}
+			src={portrait}
+			loading={"eager"}
+			widths={[320, 535, portrait.width]}
+			sizes={`(max-width: 320px) 320px, (max-width: 645px) 535px, ${portrait.width}px`}
 			alt="A portrait of Andrés Castellanos"
 		/>
 	</div>

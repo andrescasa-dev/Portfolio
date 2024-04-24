@@ -7,6 +7,7 @@ import Section from "@/components/Section.astro";
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import MySkills from "@/components/MySkills";
+import { Toaster } from "sonner";
 
 const projects = await getCollection("projects");
 const MySkillsData = await getCollection("skills");
@@ -15,6 +16,7 @@ const renderedTest = await test[0].render();
 ---
 
 <BaseLayout>
+	<Toaster richColors client:load />
 	<main class="grid grid-cols-mainLayout pb-8">
 		<Hero />
 		<Section title="My Projects">

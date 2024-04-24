@@ -1,11 +1,10 @@
 ---
+import { cn } from "@/lib/utils";
 import { Icon } from "astro-icon/components";
-import { Button } from "../components/ui/button";
-import Email from "./icons/Email";
 import { Image } from "astro:assets";
 import portrait from "../assets/hero/portrait.png";
-import { buttonVariants } from "../components/ui/button";
-import { cn } from "@/lib/utils";
+import { Button, buttonVariants } from "../components/ui/button";
+import Email from "./icons/Email";
 
 const contactMeItems = [];
 ---
@@ -21,23 +20,23 @@ const contactMeItems = [];
 			alt="A portrait of Andrés Castellanos"
 		/>
 		<div
-			class="flex flex-col justify-center gap-3 md:gap-6 lg:gap-5 bg-background w-full items-center lg:items-start"
+			class="flex flex-col justify-center gap-3 md:gap-6 lg:gap-5 bg-background w-full items-stretch md:items-center lg:items-start"
 		>
 			<h1
-				class="text-4xl md:text-6xl lg:text-[80px] font-bold max-w-[10ch] text-center lg:text-left"
+				class="text-4xl md:text-6xl lg:text-[80px] font-bold max-w-[10ch] text-center lg:text-left self-center lg:self-start"
 			>
-				I&apos;m <span class="text-accent">Andrés</span> Castellanos
+				Soy <span class="text-accent">Andrés</span> Castellanos
 			</h1>
 			<h2
-				class="font-medium text-accent text-xl md:text-3xl lg:text-4xl text-center lg:text-left"
+				class="font-medium text-accent text-xl md:text-3xl lg:text-4xl text-center lg:text-left -mt-4"
 			>
 				Frontend Developer
 			</h2>
 			<div
-				class="grid grid-cols-1 gap-2 xs:grid-cols-2 w-max justify-items-center md:gap-4 lg:justify-items-start"
+				class="grid gap-2 grid-cols-[auto_auto] xs:grid-cols-2 lg:w-max md:gap-4 lg:justify-items-start"
 			>
 				<p
-					class="flex items-center gap-2 text-lg lg:m-0 justify-self-center"
+					class="flex items-center gap-2 text-sm xs:text-lg lg:m-0"
 					aria-label="Living in Cúcuta, Colombia"
 				>
 					<Icon
@@ -48,7 +47,7 @@ const contactMeItems = [];
 					Cúcuta, Colombia
 				</p>
 				<p
-					class="flex items-center gap-2 text-lg lg:m-0 justify-self-center"
+					class="flex items-center gap-2 text-sm xs:text-lg lg:m-0"
 					aria-label="I speak Native Spanish, English B2"
 				>
 					<Icon
@@ -56,20 +55,27 @@ const contactMeItems = [];
 						name="mdi:language"
 						class="h-4 w-4 md:h-6 md:w-6 text-text-color"
 					/>
-					English B2
+					Inglés B2
 				</p>
-				<Button size={"lg"}>
-					Down Load CV
+				<a
+					href="https://jumpshare.com/v/7Q7EIiHYBaR473OvgySK"
+					target="_blank"
+					class={cn(
+						buttonVariants({ variant: "default" }),
+						"h-11 py-3 px-7 text-lg max-xs:col-span-2",
+					)}
+				>
+					Hoja de Vida
 					<Icon aria-hidden="true" class="ml-2" name="mdi:file-document" />
-				</Button>
+				</a>
 				<a
 					href="#projects"
 					class={cn(
 						buttonVariants({ variant: "outline" }),
-						"h-11 py-3 px-7 text-lg",
+						"h-11 py-3 px-7 text-lg max-xs:col-span-2",
 					)}
 				>
-					View Projects
+					Ver Proyectos
 					<Icon
 						aria-hidden="true"
 						class="ml-2 text-accent group-hover:text-primary-foreground h-6 w-6"
@@ -108,7 +114,7 @@ const contactMeItems = [];
 				</a>
 			</li>
 			<li>
-				<button aria-label={"copy email"}>
+				<button aria-label={"copy email"} id="emailButton">
 					<Email
 						className="w-8 h-8 md:w-10 md:h-10 text-text-color hover:text-text-color/80"
 						aria-hidden="true"
@@ -123,3 +129,16 @@ const contactMeItems = [];
 		/>
 	</div>
 </section>
+<script>
+	import { toast } from "sonner";
+	document
+		.getElementById("emailButton")
+		?.addEventListener("click", async (e) => {
+			try {
+				await navigator.clipboard.writeText("andres.about@gmail.com");
+				toast.success("Email Copiado: andres.about@gmail.com");
+			} catch (error) {
+				toast.error("No se pudo copiar mi Email");
+			}
+		});
+</script>

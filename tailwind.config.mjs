@@ -26,6 +26,7 @@ export default {
 				readable: "42ch"
 			},
 			colors: {
+				"text-color": "hsl(var(--text))",
 				border: "hsl(var(--border))",
 				input: "hsl(var(--input))",
 				ring: "hsl(var(--ring))",

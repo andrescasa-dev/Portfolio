@@ -2,123 +2,124 @@
 import { Icon } from "astro-icon/components";
 import { Button } from "../components/ui/button";
 import Email from "./icons/Email";
-import portrait from "src/assets/hero/portrait.png";
 import { Image } from "astro:assets";
+import portrait from "../assets/hero/portrait.png";
+import { buttonVariants } from "../components/ui/button";
+import { cn } from "@/lib/utils";
 
 const contactMeItems = [];
 ---
 
-<section
-	class="min-h-screen flex flex-col lg:flex-row justify-center items-center lg:gap-x-10 md:gap-y-5 gap-y2"
->
-	<div
-		class="h-[47%] lg:h-auto lg:w-1/2 flex flex-col justify-start lg:order-1"
-	>
+<section class="min-h-screen flex flex-col justify-center lg:gap-x-10 gap-4">
+	<div class="flex flex-col lg:flex-row justify-between items-center">
 		<Image
-			class="mt-auto mx-auto -z-10 md:block lg:max-w-none"
+			class="lg:order-1"
 			src={portrait}
 			loading={"eager"}
-			widths={[320, 535, portrait.width]}
-			sizes={`(max-width: 320px) 320px, (max-width: 645px) 535px, ${portrait.width}px`}
+			widths={[176, 300, portrait.width]}
+			sizes={`(max-width: 320px) 176px, (max-width: 1001px) 300px, ${portrait.width}px`}
 			alt="A portrait of Andrés Castellanos"
 		/>
-	</div>
-	<div
-		class="grid justify-items-center justify-center gap-3 md:gap-6 lg:gap-10 bg-background w-full"
-	>
-		<h1
-			class="text-5xl md:text-7xl lg:text-8xl font-bold text-center max-w-[10ch]"
-		>
-			I&apos;m <span class="text-accent">Andrés</span> Castellanos
-		</h1>
-		<p
-			class="hidden md:block md:text-2xl lg:text-xl text-center max-w-readable lg:-mt-8 opacity-90"
-		>
-			Driven by growth, I develop cutting-edge and appealing websites
-		</p>
 		<div
-			class="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4 justify-self-stretch"
+			class="flex flex-col justify-center gap-3 md:gap-6 lg:gap-5 bg-background w-full items-center lg:items-start"
 		>
-			<ul id="contact-me" class="flex gap-2 justify-self-center md:-order-1">
-				<li>
-					<a
-						aria-label="go to Linkedin"
-						href="https://www.linkedin.com/in/andres-cs/"
-					>
-						<Icon
-							class="w-8 h-8 md:w-10 md:h-10"
-							aria-hidden="true"
-							name="entypo-social:linkedin-with-circle"
-						/>
-					</a>
-				</li>
-				<li>
-					<a aria-label="go to Github" href="https://github.com/andrescasa-dev">
-						<Icon
-							class="w-8 h-8 md:w-10 md:h-10"
-							aria-hidden="true"
-							name="bi:github"
-						/>
-					</a>
-				</li>
-				<li>
-					<button aria-label={"copy email"}>
-						<Email className="w-8 h-8 md:w-10 md:h-10" aria-hidden="true" />
-					</button>
-				</li>
-			</ul>
-			<ul
-				id="extra-info"
-				class="flex flex-col gap-1 items-center lg:items-start md:-order-2 text-xs md:lg:text-base"
+			<h1
+				class="text-4xl md:text-6xl lg:text-[80px] font-bold max-w-[10ch] text-center lg:text-left"
 			>
-				<li
-					class="flex items-center gap-2"
+				I&apos;m <span class="text-accent">Andrés</span> Castellanos
+			</h1>
+			<h2
+				class="font-medium text-accent text-xl md:text-3xl lg:text-4xl text-center lg:text-left"
+			>
+				Frontend Developer
+			</h2>
+			<div
+				class="grid grid-cols-1 gap-2 xs:grid-cols-2 w-max justify-items-center md:gap-4 lg:justify-items-start"
+			>
+				<p
+					class="flex items-center gap-2 text-lg lg:m-0 justify-self-center"
 					aria-label="Living in Cúcuta, Colombia"
 				>
 					<Icon
 						aria-hidden="true"
 						name="mdi:location"
-						class="h-4 w-4 md:h-6 md:w-6 text-accent"
+						class="h-4 w-4 md:h-6 md:w-6 text-text-color"
 					/>
 					Cúcuta, Colombia
-				</li>
-				<li
-					class="flex items-center gap-2"
+				</p>
+				<p
+					class="flex items-center gap-2 text-lg lg:m-0 justify-self-center"
 					aria-label="I speak Native Spanish, English B2"
 				>
 					<Icon
 						aria-hidden="true"
 						name="mdi:language"
-						class="h-4 w-4 md:h-6 md:w-6 text-accent"
+						class="h-4 w-4 md:h-6 md:w-6 text-text-color"
 					/>
-					Native Spanish, English B2
-				</li>
-			</ul>
-			<Button className="justify-self-stretch lg:text-base" size={"lg"}>
-				Down Load CV
-				<Icon
-					aria-hidden="true"
-					class="h-4 w-4 ml-2"
-					name="mdi:file-document"
-				/>
-			</Button>
-			<Button
-				className="justify-self-stretch lg:text-base text-primary"
-				size={"lg"}
-				variant={"outline"}
-			>
-				View Projects
-				<Icon
-					aria-hidden="true"
-					class="h-4 w-4 ml-2"
-					name="mdi:keyboard-arrow-right"
-				/>
-			</Button>
+					English B2
+				</p>
+				<Button size={"lg"}>
+					Down Load CV
+					<Icon aria-hidden="true" class="ml-2" name="mdi:file-document" />
+				</Button>
+				<a
+					href="#projects"
+					class={cn(
+						buttonVariants({ variant: "outline" }),
+						"h-11 py-3 px-7 text-lg",
+					)}
+				>
+					View Projects
+					<Icon
+						aria-hidden="true"
+						class="ml-2 text-accent group-hover:text-primary-foreground h-6 w-6"
+						name="mdi:keyboard-arrow-right"
+					/>
+				</a>
+			</div>
 		</div>
-		<p class="text-xs md:text-sm flex justify-center items-center gap-1.5">
-			<span>Full time</span>
-			<span class="text-[10px] md:text-sm opacity-75">or</span>
-			<span>Freelance</span>
-		</p>
+	</div>
+	<div class="flex flex-col gap-2 items-center">
+		<ul id="contact-me" class="flex gap-2 justify-self-center">
+			<li>
+				<a
+					aria-label="go to Linkedin"
+					href="https://www.linkedin.com/in/andres-cs/"
+					target="_blank"
+				>
+					<Icon
+						class="w-8 h-8 md:w-10 md:h-10 text-text-color hover:text-text-color/80"
+						aria-hidden="true"
+						name="entypo-social:linkedin-with-circle"
+					/>
+				</a>
+			</li>
+			<li>
+				<a
+					aria-label="go to Github"
+					href="https://github.com/andrescasa-dev"
+					target="_blank"
+				>
+					<Icon
+						class="w-8 h-8 md:w-10 md:h-10 text-text-color hover:text-text-color/80"
+						aria-hidden="true"
+						name="bi:github"
+					/>
+				</a>
+			</li>
+			<li>
+				<button aria-label={"copy email"}>
+					<Email
+						className="w-8 h-8 md:w-10 md:h-10 text-text-color hover:text-text-color/80"
+						aria-hidden="true"
+					/>
+				</button>
+			</li>
+		</ul>
+		<Icon
+			aria-hidden="true"
+			class="h-10 w-10 rotate-90 text-accent"
+			name="mdi:keyboard-arrow-right"
+		/>
 	</div>
 </section>

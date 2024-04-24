@@ -11,7 +11,7 @@ function ProjectsBento({ myProjects }: Props) {
   const [currentProject, setCurrentProject] = useState<CollectionEntry<'projects'> | null>(null)
 
   return (
-    <div className="grid gap-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <div id="projects" className="grid gap-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {myProjects.map((project) => (
         <BentoCard
           key={crypto.randomUUID()}

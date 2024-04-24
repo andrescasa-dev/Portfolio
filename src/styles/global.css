@@ -17,8 +17,8 @@
     --primary: 43 96% 56%;
     --primary-foreground: 43, 96%, 2%;
 
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
+    --secondary: 240, 4%, 20%;
+    --secondary-foreground: 180, 3%, 95%;
 
     --muted: 180, 3%, 12.6%;
     --muted-foreground: 0 0% 45.1%;
@@ -73,7 +73,7 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-text-color;
   }
 
   .title {
@@ -118,4 +118,19 @@
 
 .content p+p {
   margin-top: 1em;
+}
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
 }

@@ -8,7 +8,8 @@ import type { CollectionEntry } from "astro:content"
 import { ChevronDown } from "lucide-react"
 import { useEffect, useState } from "react"
 import SkillCategorizedGrid from "./SkillCategorizedGrid"
-import { Button } from "./ui/button"
+import { Button, buttonVariants } from "./ui/button"
+import { cn } from "@/lib/utils"
 
 interface Props {
   skills: CollectionEntry<"skills">[]
@@ -26,7 +27,7 @@ function SkillsWithFilter({ skills }: Props) {
   return (
     <div className="grid gap-4">
       <DropdownMenu>
-        <DropdownMenuTrigger className="justify-self-end capitalize" asChild>
+        <DropdownMenuTrigger className={cn(buttonVariants({ variant: 'outline' }), "justify-self-end capitalize")} asChild>
           <Button variant="secondary">Filtrar Por: {filteredBy}<ChevronDown className="w-4 h-4 ml-2" /> </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent>

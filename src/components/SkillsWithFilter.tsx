@@ -17,7 +17,7 @@ interface Props {
 
 function SkillsWithFilter({ skills }: Props) {
   const [categories, setCategories] = useState<CollectionEntry<"skills">["data"]["categories"]>([])
-  const [filteredBy, setFilteredBy] = useState<string>('all')
+  const [filteredBy, setFilteredBy] = useState<string>('todas')
 
   useEffect(() => {
     setCategories(getSkillsData(skills, filteredBy).categories)
@@ -27,11 +27,11 @@ function SkillsWithFilter({ skills }: Props) {
     <div className="grid gap-4">
       <DropdownMenu>
         <DropdownMenuTrigger className="justify-self-end capitalize" asChild>
-          <Button variant="secondary">filter by: {filteredBy}<ChevronDown className="w-4 h-4 ml-2" /> </Button>
+          <Button variant="secondary">Filtrar Por: {filteredBy}<ChevronDown className="w-4 h-4 ml-2" /> </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
           <DropdownMenuRadioGroup value={filteredBy} onValueChange={setFilteredBy}>
-            {[{ id: 'all', data: { order: 0 } }, ...skills].sort((a, b) => a.data.order - b.data.order).map((skill) => (
+            {[{ id: 'todas', data: { order: 0 } }, ...skills].sort((a, b) => a.data.order - b.data.order).map((skill) => (
               <DropdownMenuRadioItem value={skill.id} key={crypto.randomUUID()} >
                 <Button className="w-full capitalize flex items-center" variant={'ghost'}>{skill.id}</Button>
               </DropdownMenuRadioItem>
@@ -55,7 +55,7 @@ const getAllSkill = (skillLifeCycle: CollectionEntry<'skills'>[]): CollectionEnt
   let categoriesAcc: CollectionEntry<'skills'>['data']['categories'] = []
 
   skillLifeCycle.forEach(({ id, data: { categories } }) => {
-    if (id !== 'want_to_learn') {
+    if (id !== 'quiero_aprender') {
       categories.forEach(({ category: categoryTarget, skillSet: skillSetToAdd }) => {
         const storedI = categoriesAcc.findIndex(({ category }) => category === categoryTarget)
         if (storedI !== -1) {
@@ -69,7 +69,7 @@ const getAllSkill = (skillLifeCycle: CollectionEntry<'skills'>[]): CollectionEnt
   })
 
   const allSkills: CollectionEntry<'skills'>['data'] = {
-    learningPhase: "all",
+    learningPhase: "todas",
     order: 0,
     categories: categoriesAcc
   }

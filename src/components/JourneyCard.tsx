@@ -24,7 +24,7 @@ function JourneyCard({ journeyPeriod, children: content }: Props) {
         <div className="flex justify-between items-center">
           <h2 className="title mt-2">{title}</h2>
           <Button variant="ghost" className="text-accent base ml-2 w-[7em] " onClick={() => setIsOpen((prev) => !prev)}>
-            {isOpen ? 'Less' : 'More'} <ChevronDown className={`w-4 h-4 ml-2 ${isOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
+            {isOpen ? 'Menos' : 'Más'} <ChevronDown className={`w-4 h-4 ml-2 ${isOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
           </Button>
         </div>
       </header>

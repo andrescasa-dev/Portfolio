@@ -8,24 +8,24 @@ interface Props {
 }
 
 function MySkills({ skillLifeCycle: skills }: Props) {
-  const wantToLearn = skills.find(({ id }) => id === "want_to_learn")!
-  const tools = skills.find(({ id }) => id === "tools")!
-  const mySkills = skills.filter(({ id }) => id !== "want_to_learn" && id !== "tools")
+  const wantToLearn = skills.find(({ id }) => id === "quiero_aprender")!
+  const tools = skills.find(({ id }) => id === "herramientas")!
+  const mySkills = skills.filter(({ id }) => id !== "quiero_aprender" && id !== "herramientas")
 
   return (
     <Tabs defaultValue="all_my_skills" className="w-full grid">
       <TabsList className="justify-self-center mb-8">
-        <TabsTrigger className="capitalize" value={"all_my_skills"}>All My Skills</TabsTrigger>
-        <TabsTrigger className="capitalize" value={"want_to_learn"}>want to learn</TabsTrigger>
-        <TabsTrigger className="capitalize" value={"tools"}>tools</TabsTrigger>
+        <TabsTrigger className="capitalize" value={"all_my_skills"}>Todas</TabsTrigger>
+        <TabsTrigger className="capitalize" value={"quiero_aprender"}>Quiero aprender</TabsTrigger>
+        <TabsTrigger className="capitalize" value={"herramientas"}>Herramientas</TabsTrigger>
       </TabsList>
       <TabsContent value={"all_my_skills"}>
         <SkillsWithFilter skills={mySkills} />
       </TabsContent>
-      <TabsContent value={"want_to_learn"}>
+      <TabsContent value={"quiero_aprender"}>
         <SkillCategorizedGrid categories={wantToLearn.data.categories} />
       </TabsContent>
-      <TabsContent value={"tools"}>
+      <TabsContent value={"herramientas"}>
         <SkillCategorizedGrid categories={tools.data.categories} />
       </TabsContent>
     </Tabs>

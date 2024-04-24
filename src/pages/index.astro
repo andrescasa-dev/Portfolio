@@ -19,16 +19,16 @@ const renderedTest = await test[0].render();
 	<Toaster richColors client:load />
 	<main class="grid grid-cols-mainLayout pb-8">
 		<Hero />
-		<Section title="My Projects">
+		<Section title="Proyectos">
 			<ProjectsBento client:load myProjects={projects} />
 		</Section>
-		<Section title="My skills">
+		<Section title="Habilidades">
 			<MySkills client:load skillLifeCycle={MySkillsData} />
 		</Section>
-		<Section title="My Journey">
+		<Section title="Trayectoria">
 			<JourneyTimeline />
 		</Section>
-		<Section title="My Hobbies">
+		<Section title="Hobbies">
 			<Hobbies />
 		</Section>
 	</main>

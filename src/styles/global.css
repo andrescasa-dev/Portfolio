@@ -20,7 +20,7 @@
     --secondary: 240, 4%, 20%;
     --secondary-foreground: 180, 3%, 95%;
 
-    --muted: 180, 3%, 12.6%;
+    --muted: 240, 4%, 16%;
     --muted-foreground: 0 0% 45.1%;
 
     --accent: 172 66% 50%;
@@ -133,4 +133,8 @@
   border-radius: 20px;
   border: 6px solid transparent;
   background-clip: content-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }

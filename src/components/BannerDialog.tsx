@@ -1,11 +1,8 @@
-import type { ReactNode } from "react";
-import { Dialog, DialogFooter } from "./ui/dialog";
-import { DialogTrigger } from "./ui/dialog";
-import { DialogContent } from "./ui/dialog";
-import { DialogHeader } from "./ui/dialog";
-import { Button, buttonVariants } from "./ui/button";
-import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ArrowRight } from "lucide-react";
+import type { ReactNode } from "react";
+import { buttonVariants } from "./ui/button";
+import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTrigger } from "./ui/dialog";
 
 interface Props {
   thumbnail: ReactNode,

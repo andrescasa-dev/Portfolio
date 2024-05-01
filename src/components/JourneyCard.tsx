@@ -1,5 +1,5 @@
 import type { CollectionEntry } from "astro:content";
-import { ChevronDown, ChevronRight } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import { Button } from "./ui/button";
 

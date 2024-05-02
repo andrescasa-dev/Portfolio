@@ -4,26 +4,35 @@ import { getCollection } from "astro:content";
 import JourneyItem from "./JourneyItem.astro";
 import Circle from "./JourneyTimelineCircle.astro";
 
-const periods = await getCollection("journeyPeriods");
+// period = {title, highlight[], banner[]}
+// entryPeriod = {id:filename, data:period}
+// periods = entryPeriod[]
+const periodsCollection = await getCollection("journeyPeriods");
+const onePeriosEntry = periodsCollection[0]
+// transform and arr [period, period, period] into the following structure: [[period,period], [period]]
+// grouping the periods into grops of max two, (min one if there is no more periods to complete the final group)
+type PeriodEntryT = typeof periodsCollection[0]
+type AccumReduce = [PeriodEntryT, PeriodEntryT?][] | []
 
-// transform and arr into the following structure: [[period,period]...]
-const periodsGroup = periods.reduce<
-  Array<[(typeof periods)[0], (typeof periods)[0]] | [(typeof periods)[0]]>
->((chunks, _, i, arr) => {
+const periodsGroup = periodsCollection.reduce<[PeriodEntryT, PeriodEntryT?][] | []>((periodEntryGroupArray, _, i, arr) => {
   if (i % 2) {
-    return [...chunks, [arr[i - 1], arr[i]]];
+    // periodEntryGroupArray:  [[entry,entry], [entry,entry]] 
+    // accum: [[entry,entry], [entry,entry], [newE, newE]]
+    // []
+    return [...periodEntryGroupArray, [arr[i - 1], arr[i]]];
   } else if (i === arr.length - 1 && arr.length % 2 !== 0) {
-    return [...chunks, [arr[i]]];
+    return [...periodEntryGroupArray, [arr[i]]];
   } else {
-    return chunks;
+    return periodEntryGroupArray;
   }
 }, []);
 ---
 
 <div class="relative">
-   
   {
-    periodsGroup.map(([period1, period2], i) => (
+    periodsGroup.map((current, i) => {
+      const [period1, period2] = current
+      return(
       <div
         class={cn(
           "grid grid-rows-[repeat(3,_minmax(200px,_auto))] md:grid-rows-[repeat(2,_minmax(200px,_auto))] gap-y-8 sm:gap-y-0 md:grid-cols-timelineLayout sm:max-md:px-16",
@@ -44,9 +53,8 @@ const periodsGroup = periods.reduce<
           />
           <Circle class="md:row-start-2" />
         )}
-        
       </div>
-    ))
+    )})
   }
   <div
     id="line"

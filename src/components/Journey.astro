@@ -3,25 +3,27 @@ import { cn } from "@/lib/utils";
 import JourneyItem from "./JourneyItem.astro";
 import Circle from "./JourneyTimelineCircle.astro";
 import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 const periodsCollection = await getCollection("journeyPeriods");
 
-type PeriodEntryT = typeof periodsCollection[0]
-type AccumReduce = [PeriodEntryT, PeriodEntryT?][] | []
+type TPeriodEntry = CollectionEntry<'journeyPeriods'>
 
-// transform and arr [period, period, period] into the following structure: [[period,period], [period]]
-// grouping the periods into grops of max two, (min one if there is no more periods to complete the final group)
-console.log('periodsCollection ', periodsCollection)
-const periodsGroup = periodsCollection.reduce<AccumReduce>((periodEntryGroupArray, _, i, arr) => {
-  if (i % 2) {
-    // periodEntryGroupArray:  [[entry,entry], [entry,entry]] 
-    // accum: [[entry,entry], [entry,entry], [newE, newE]]
-    return [...periodEntryGroupArray, [arr[i - 1], arr[i]]];
-  } else if (i === arr.length - 1 && arr.length % 2 !== 0) {
-    return [...periodEntryGroupArray, [arr[i]]];
-  } else {
+type AccumReduce = [TPeriodEntry, TPeriodEntry?][];
+
+function groupPeriods(periodsCollection: TPeriodEntry[]): AccumReduce {
+    let periodEntryGroupArray: AccumReduce = [];
+
+    for (let i = 0; i < periodsCollection.length; i += 2) {
+        if (i + 1 < periodsCollection.length) {
+            periodEntryGroupArray.push([periodsCollection[i], periodsCollection[i + 1]]);
+        } else {
+            periodEntryGroupArray.push([periodsCollection[i]]);
+        }
+    }
+
     return periodEntryGroupArray;
-  }
-}, []);
+}
+const periodsGroup = groupPeriods(periodsCollection)
 ---
 
 <div class="relative">

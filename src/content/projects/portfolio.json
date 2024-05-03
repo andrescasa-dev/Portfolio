@@ -1,0 +1,64 @@
+{
+  "$schema": "./_projects.schema.json",
+  "title": "Portafolio",
+  "description": "Pásate por el figma de mi Portafolio",
+  "priority": "tertiary",
+  "demo": "https://digital-hippo-andres.up.railway.app/",
+  "code": "https://github.com/andrescasa-dev/digital-hippo",
+  "technologies": [
+    {
+      "category": "frontend",
+      "items": [
+        {
+          "name": "TypeScript",
+          "icon": "TypeScript"
+        },
+        {
+          "name": "React",
+          "icon": "React"
+        },
+        {
+          "name": "Astro",
+          "icon": "Astro"
+        },
+        {
+          "name": "Tailwind",
+          "icon": "Tailwind"
+        },
+        {
+          "name": "Semantic HTML",
+          "icon": "Html"
+        },
+        {
+          "name": "Shadcn",
+          "icon": "Shadcn"
+        }
+      ]
+    },
+    {
+      "category": "Design",
+      "items": [
+        {
+          "name": "Figma",
+          "icon": "Figma"
+        }
+      ]
+    }
+  ],
+  "main_features": [
+    "Custom desing and components",
+    "Responsive",
+    "Easy to update and add content"
+  ],
+  "challenges": [
+    {
+      "title": "",
+      "solution": ""
+    }
+  ],
+  "what_i_learned": [
+    "Astro fundamentals and collections",
+    "Image optimization",
+    "Basic structure of a landing page"
+  ]
+}

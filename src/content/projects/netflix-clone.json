@@ -1,0 +1,87 @@
+{
+  "$schema": "./_projects.schema.json",
+  "title": "Netflix Clone",
+  "description": "Pequeño clon de Netflix. Proyecto final del curso Next.js 13 por Zero To Mastery",
+  "priority": "secondary",
+  "demo": "https://netflixcasa.vercel.app/",
+  "code": "https://github.com/andrescasa-dev/netflix-clone",
+  "technologies": [
+    {
+      "category": "frontend",
+      "items": [
+        {
+          "name": "JavaScript",
+          "icon": "JavaScript"
+        },
+        {
+          "name": "React",
+          "icon": "React"
+        },
+        {
+          "name": "NextJS page router",
+          "icon": "NextJS13"
+        },
+        {
+          "name": "CSS",
+          "icon": "CSS"
+        },
+        {
+          "name": "Html5",
+          "icon": "Html"
+        }
+      ]
+    },
+    {
+      "category": "backend",
+      "items": [
+        {
+          "name": "JavaScript",
+          "icon": "JavaScript"
+        },
+        {
+          "name": "GraphQL",
+          "icon": "GraphQL"
+        },
+        {
+          "name": "NextJS page router",
+          "icon": "NextJS13"
+        },
+        {
+          "name": "Hasura",
+          "icon": "Hasura"
+        },
+        {
+          "name": "Magic",
+          "icon": "Magic"
+        }
+      ]
+    },
+    {
+      "category": "design",
+      "items": [
+        {
+          "name": "Figma",
+          "icon": "Figma"
+        }
+      ]
+    }
+  ],
+  "main_features": [
+    "Autentificación de usuario",
+    "Optimización del Seo con Server Side Rendering, Static Site Generation",
+    "Reproductor multimedia personalizado con la API de Vime",
+    "lista de peliculas “seguir viendo”",
+    "Almacenar películas marcadas como 'Me gusta' por el usuario"
+  ],
+  "challenges": [
+    {
+      "title": "Autenticación de usuario",
+      "solution": "Después de investigar por mi cuenta y leer la documentación mágica, pude entender el cifrado de clave pública y privada, por qué debo utilizar un JWT para comunicarme con Hasura y cómo crear y utilizar cookies."
+    }
+  ],
+  "what_i_learned": [
+    "Métodos de Rendirizado de NextJS Page Router SSR, ISR, SSR y CSR",
+    "Fundamentos de GraphQL",
+    "Implementación y trabajo con autenticación»"
+  ]
+}

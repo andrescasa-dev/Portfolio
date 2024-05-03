@@ -1,0 +1,97 @@
+{
+  "$schema": "./_projects.schema.json",
+  "title": "Digital Hippo",
+  "description": "Plataforma de comercio electrónico para la compra y venta productos digitales. Guiado por josh tried coding",
+  "priority": "primary",
+  "demo": "https://digital-hippo-andres.up.railway.app/",
+  "code": "https://github.com/andrescasa-dev/digital-hippo",
+  "technologies": [
+    {
+      "category": "frontend",
+      "items": [
+        {
+          "name": "TypeScript",
+          "icon": "TypeScript"
+        },
+        {
+          "name": "React",
+          "icon": "React"
+        },
+        {
+          "name": "NextJS app router",
+          "icon": "NextJS14"
+        },
+        {
+          "name": "Tailwind",
+          "icon": "Tailwind"
+        },
+        {
+          "name": "Html5",
+          "icon": "Html"
+        },
+        {
+          "name": "Zustand",
+          "icon": "Zustand"
+        },
+        {
+          "name": "Zod",
+          "icon": "Zod"
+        },
+        {
+          "name": "Shadcn",
+          "icon": "Shadcn"
+        }
+      ]
+    },
+    {
+      "category": "backend",
+      "items": [
+        {
+          "name": "TypeScript",
+          "icon": "TypeScript"
+        },
+        {
+          "name": "Express",
+          "icon": "Express"
+        },
+        {
+          "name": "NodeJS",
+          "icon": "NodeJS"
+        },
+        {
+          "name": "TRPC",
+          "icon": "TRPC"
+        },
+        {
+          "name": "PayloadCMS",
+          "icon": "PayloadCMS"
+        },
+        {
+          "name": "Stripe",
+          "icon": "Stripe"
+        }
+      ]
+    }
+  ],
+  "main_features": [
+    "Comprar con tarjeta de crédito usando stripe.",
+    "Publicar productos digitales a la venta con un CMS personalizado.",
+    "Autentificación de Usuario.",
+    "Optimización del SEO.",
+    "Alto rendimiento Web.",
+    "Tipado de datos en Frontend y Backend con tRPC.",
+    "Diseño responsivo."
+  ],
+  "challenges": [
+    {
+      "title": "Servidor web hibrido NextJS + PayloadCMS",
+      "solution": "Leí la documentación de Payload y busqué información sobre Express.js para entender cómo configurarlo y cómo el servidor procesa las peticiones."
+    }
+  ],
+  "what_i_learned": [
+    "Server components y su proceso de hidratación",
+    "Rerforcé conocimientos sobre Static Site Generation.",
+    "Ciclo de vida de la gestión de peticiones de Express.js.",
+    "Proceso de autentificación con PayloadCMS."
+  ]
+}

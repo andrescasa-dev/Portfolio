@@ -1,0 +1,79 @@
+{
+  "$schema": "./_skills.schema.json",
+  "order": 4,
+  "learningPhase": "quiero aprender",
+  "categories": [
+    {
+      "category": "frontend",
+      "skillSet": [
+        {
+          "iconName": "Angular",
+          "name": "Angular"
+        },
+        {
+          "iconName": "ReactNative",
+          "name": "React Native"
+        },
+        {
+          "iconName": "GSAP",
+          "name": "GSAP"
+        },
+        {
+          "iconName": "Redux",
+          "name": "Redux vanilla"
+        },
+        {
+          "iconName": "Jquery",
+          "name": "Jquery"
+        }
+      ]
+    },
+    {
+      "category": "backend",
+      "skillSet": [
+        {
+          "iconName": "Laravel",
+          "name": "Laravel"
+        },
+        {
+          "iconName": "Docker",
+          "name": "Docker"
+        },
+        {
+          "iconName": "SQL",
+          "name": "SQL"
+        },
+        {
+          "iconName": "Nest",
+          "name": "Nest JS"
+        }
+      ]
+    },
+    {
+      "category": "full stack",
+      "skillSet": [
+        {
+          "iconName": "PHP",
+          "name": "PHP"
+        },
+        {
+          "iconName": "Remix",
+          "name": "Remix"
+        },
+        {
+          "iconName": "Jest",
+          "name": "Jest"
+        }
+      ]
+    },
+    {
+      "category": "idiomas",
+      "skillSet": [
+        {
+          "iconName": "GermanFlag",
+          "name": "German"
+        }
+      ]
+    }
+  ]
+}

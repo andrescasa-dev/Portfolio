@@ -1,0 +1,158 @@
+{
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "maxLength": 14
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 120
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "primary",
+        "secondary",
+        "tertiary",
+        "quaternary"
+      ]
+    },
+    "demo": {
+      "type": "string",
+      "format": "uri"
+    },
+    "code": {
+      "type": "string",
+      "format": "uri"
+    },
+    "technologies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "maxLength": 20
+                },
+                "icon": {
+                  "type": "string",
+                  "enum": [
+                    "UxDesign",
+                    "SpainFlag",
+                    "GermanFlag",
+                    "UkFlag",
+                    "Vite",
+                    "Linux",
+                    "Angular",
+                    "ReactNative",
+                    "GSAP",
+                    "Redux",
+                    "Jquery",
+                    "Laravel",
+                    "Docker",
+                    "SQL",
+                    "Nest",
+                    "PHP",
+                    "Remix",
+                    "Jest",
+                    "Todoist",
+                    "Notion",
+                    "Obsidian",
+                    "Excalidraw",
+                    "Phind",
+                    "Astro",
+                    "NextJS13",
+                    "NextJS14",
+                    "Figma",
+                    "Magic",
+                    "Hasura",
+                    "GraphQL",
+                    "CSS",
+                    "TRPC",
+                    "NodeJS",
+                    "Stripe",
+                    "TypeScript",
+                    "PayloadCMS",
+                    "Express",
+                    "Zod",
+                    "Shadcn",
+                    "Zustand",
+                    "Html",
+                    "React",
+                    "TechIcon",
+                    "JavaScript",
+                    "Tailwind"
+                  ]
+                }
+              },
+              "required": [
+                "name",
+                "icon"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "category",
+          "items"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "main_features": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "challenges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "maxLength": 40
+          },
+          "solution": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "solution"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "what_i_learned": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "title",
+    "description",
+    "priority",
+    "demo",
+    "code",
+    "technologies",
+    "main_features",
+    "challenges",
+    "what_i_learned"
+  ],
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

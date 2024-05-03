@@ -1,0 +1,120 @@
+{
+  "type": "object",
+  "properties": {
+    "order": {
+      "type": "number"
+    },
+    "learningPhase": {
+      "type": "string",
+      "enum": [
+        "dominada",
+        "aprendiendo",
+        "competente",
+        "quiero aprender",
+        "herramientas",
+        "todas"
+      ]
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string",
+            "enum": [
+              "frontend",
+              "backend",
+              "diseño",
+              "tools",
+              "others",
+              "full stack",
+              "idiomas"
+            ]
+          },
+          "skillSet": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "iconName": {
+                  "type": "string",
+                  "enum": [
+                    "UxDesign",
+                    "SpainFlag",
+                    "GermanFlag",
+                    "UkFlag",
+                    "Vite",
+                    "Linux",
+                    "Angular",
+                    "ReactNative",
+                    "GSAP",
+                    "Redux",
+                    "Jquery",
+                    "Laravel",
+                    "Docker",
+                    "SQL",
+                    "Nest",
+                    "PHP",
+                    "Remix",
+                    "Jest",
+                    "Todoist",
+                    "Notion",
+                    "Obsidian",
+                    "Excalidraw",
+                    "Phind",
+                    "Astro",
+                    "NextJS13",
+                    "NextJS14",
+                    "Figma",
+                    "Magic",
+                    "Hasura",
+                    "GraphQL",
+                    "CSS",
+                    "TRPC",
+                    "NodeJS",
+                    "Stripe",
+                    "TypeScript",
+                    "PayloadCMS",
+                    "Express",
+                    "Zod",
+                    "Shadcn",
+                    "Zustand",
+                    "Html",
+                    "React",
+                    "TechIcon",
+                    "JavaScript",
+                    "Tailwind"
+                  ]
+                },
+                "name": {
+                  "type": "string"
+                },
+                "clarification": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "iconName",
+                "name"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "category",
+          "skillSet"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "order",
+    "learningPhase",
+    "categories"
+  ],
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

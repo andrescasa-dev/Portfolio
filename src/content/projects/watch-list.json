@@ -1,0 +1,43 @@
+{
+  "$schema": "./_projects.schema.json",
+  "title": "Watch List",
+  "description": "Pequeña página de peliculas, práctica data fetching con JS",
+  "priority": "quaternary",
+  "demo": "https://digital-hippo-andres.up.railway.app/",
+  "code": "https://github.com/andrescasa-dev/digital-hippo",
+  "technologies": [
+    {
+      "category": "frontend",
+      "items": [
+        {
+          "name": "JavaScript",
+          "icon": "JavaScript"
+        },
+        {
+          "name": "Tailwind",
+          "icon": "Tailwind"
+        },
+        {
+          "name": "HTML",
+          "icon": "Html"
+        }
+      ]
+    }
+  ],
+  "main_features": [
+    "Buy with credit card using stripe",
+    "Upload and sell digital assets using a custom CMS",
+    "Fast and appealing User Experience in all devices"
+  ],
+  "challenges": [
+    {
+      "title": "combined Payload and Nextjs Server",
+      "solution": "I understood how Express works and the NextJS utilities, understanding how the server works was key to the development of the page."
+    }
+  ],
+  "what_i_learned": [
+    "Deeply understanding of the four render methods of NextJS13: SSR, ISR, SSR and CSR",
+    "fundamentals of GraphQL",
+    "the Authentication workflow"
+  ]
+}

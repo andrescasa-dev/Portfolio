@@ -1,0 +1,71 @@
+{
+  "$schema": "./_skills.schema.json",
+  "order": 2,
+  "learningPhase": "dominada",
+  "categories": [
+    {
+      "category": "frontend",
+      "skillSet": [
+        {
+          "iconName": "Astro",
+          "name": "Astro"
+        },
+        {
+          "iconName": "Vite",
+          "name": "Vite"
+        }
+      ]
+    },
+    {
+      "category": "backend",
+      "skillSet": [
+        {
+          "iconName": "NodeJS",
+          "name": "NodeJS"
+        },
+        {
+          "iconName": "PayloadCMS",
+          "name": "Payload CMS"
+        },
+        {
+          "iconName": "Express",
+          "name": "Express"
+        },
+        {
+          "iconName": "Linux",
+          "name": "Linux"
+        }
+      ]
+    },
+    {
+      "category": "full stack",
+      "skillSet": [
+        {
+          "iconName": "NextJS13",
+          "name": "NextJS 13"
+        },
+        {
+          "iconName": "NextJS14",
+          "name": "NextJS 14"
+        },
+        {
+          "iconName": "TypeScript",
+          "name": "TypeScript"
+        }
+      ]
+    },
+    {
+      "category": "diseño",
+      "skillSet": [
+        {
+          "iconName": "Figma",
+          "name": "Figma"
+        },
+        {
+          "iconName": "UxDesign",
+          "name": "Ux Desing"
+        }
+      ]
+    }
+  ]
+}

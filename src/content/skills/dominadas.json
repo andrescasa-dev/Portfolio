@@ -1,0 +1,50 @@
+{
+  "$schema": "./_skills.schema.json",
+  "learningPhase": "dominada",
+  "order": 1,
+  "categories": [
+    {
+      "category": "full stack",
+      "skillSet": [
+        {
+          "iconName": "JavaScript",
+          "name": "JavaScript"
+        }
+      ]
+    },
+    {
+      "category": "frontend",
+      "skillSet": [
+        {
+          "iconName": "React",
+          "name": "React"
+        },
+        {
+          "iconName": "Tailwind",
+          "name": "Tailwind"
+        },
+        {
+          "iconName": "CSS",
+          "name": "CSS"
+        },
+        {
+          "iconName": "Html",
+          "name": "Semantic Html"
+        }
+      ]
+    },
+    {
+      "category": "idiomas",
+      "skillSet": [
+        {
+          "iconName": "SpainFlag",
+          "name": "Spanish"
+        },
+        {
+          "iconName": "UkFlag",
+          "name": "English"
+        }
+      ]
+    }
+  ]
+}

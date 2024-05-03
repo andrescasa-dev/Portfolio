@@ -1,0 +1,32 @@
+{
+  "$schema": "./_skills.schema.json",
+  "order": 4,
+  "learningPhase": "herramientas",
+  "categories": [
+    {
+      "category": "tools",
+      "skillSet": [
+        {
+          "iconName": "Todoist",
+          "name": "Todoist"
+        },
+        {
+          "iconName": "Notion",
+          "name": "Notion"
+        },
+        {
+          "iconName": "Obsidian",
+          "name": "Obsidian"
+        },
+        {
+          "iconName": "Excalidraw",
+          "name": "Excalidraw"
+        },
+        {
+          "iconName": "Phind",
+          "name": "Phind"
+        }
+      ]
+    }
+  ]
+}

@@ -3,7 +3,7 @@
   "title": "Digital Hippo",
   "description": "Plataforma de comercio electrónico para la compra y venta productos digitales. Guiado por josh tried coding",
   "priority": "primary",
-  "demo": "https://digital-hippo-andres.up.railway.app/",
+  "demo": "https://digital-hippo-casa.up.railway.app/",
   "code": "https://github.com/andrescasa-dev/digital-hippo",
   "technologies": [
     {
@@ -89,9 +89,10 @@
     }
   ],
   "what_i_learned": [
+    "Webhooks y el ciclo de pago con stripe",
+    "Creación de un backend con PayloadCMS y su debida autorización y autentificación",
     "Server components y su proceso de hidratación",
-    "Rerforcé conocimientos sobre Static Site Generation.",
-    "Ciclo de vida de la gestión de peticiones de Express.js.",
-    "Proceso de autentificación con PayloadCMS."
+    "Uso de express para crear endpoints y usar middlewares",
+    "Optimización de imágenes y Open graph para el SEO"
   ]
 }

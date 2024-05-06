@@ -76,12 +76,13 @@
   "challenges": [
     {
       "title": "Autenticación de usuario",
-      "solution": "Después de investigar por mi cuenta y leer la documentación mágica, pude entender el cifrado de clave pública y privada, por qué debo utilizar un JWT para comunicarme con Hasura y cómo crear y utilizar cookies."
+      "solution": "Después de investigar por mi cuenta y leer la documentación de Magic Links, pude entender el cifrado de clave pública y privada, por qué debo utilizar un JWT para comunicarme con Hasura y cómo crear y utilizar cookies."
     }
   ],
   "what_i_learned": [
     "Métodos de Rendirizado de NextJS Page Router SSR, ISR, SSR y CSR",
     "Fundamentos de GraphQL",
-    "Implementación y trabajo con autenticación»"
+    "Manejo de Cookies para controlar la sesión del usuario",
+    "Uso de JWT para autentificación y autorización del usuario"
   ]
 }

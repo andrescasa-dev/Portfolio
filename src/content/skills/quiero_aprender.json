@@ -19,10 +19,6 @@
           "name": "GSAP"
         },
         {
-          "iconName": "Redux",
-          "name": "Redux vanilla"
-        },
-        {
           "iconName": "Jquery",
           "name": "Jquery"
         }

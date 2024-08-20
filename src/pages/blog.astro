@@ -1,5 +1,13 @@
 ---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getCollection, getEntry } from 'astro:content';
 
+const allBlogs = await getCollection('projectsDetail')
+const blog = await getEntry('projectsDetail', allBlogs[0].slug)
+const {Content} = await blog.render()
 ---
-
-<h1>Blog</h1>
+<BaseLayout>
+  <main class="prose prose-invert mx-auto my-8">
+    <Content/>
+  </main>
+</BaseLayout>

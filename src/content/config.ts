@@ -87,12 +87,23 @@ const hobbies = defineCollection({
   })
 })
 
+const projectDetails = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string()
+  })
+})
 
 export const collections = {
   'projects': projects,
   'journeyPeriods': journeyPeriods,
   'skills': skills,
-  'hobbies': hobbies
+  'hobbies': hobbies,
+  'projectDetails': projectDetails
 }
 
-await astroZodCollectionsToJsonSchemas(collections);
+try {
+  await astroZodCollectionsToJsonSchemas(collections);
+} catch (error) {
+  console.error('Error generating contents JSON schemas')
+}

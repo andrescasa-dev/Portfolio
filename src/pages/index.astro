@@ -2,12 +2,12 @@
 import Hero from "@/components/Hero.astro";
 import Hobbies from "@/components/Hobbies.astro";
 import JourneyTimeline from "@/components/Journey.astro";
+import MySkills from "@/components/MySkills";
 import ProjectsBento from "@/components/ProjectsBento";
 import Section from "@/components/Section.astro";
 import { getCollection } from "astro:content";
-import BaseLayout from "../layouts/BaseLayout.astro";
-import MySkills from "@/components/MySkills";
 import { Toaster } from "sonner";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const projects = await getCollection("projects");
 const MySkillsData = await getCollection("skills");

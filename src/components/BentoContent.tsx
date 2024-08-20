@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/accordion"
 import type { CollectionEntry } from "astro:content"
 import { contentConfig, openAreas } from "@/config"
+import { ArrowRight } from "lucide-react"
 
 
 interface Props {
@@ -61,6 +62,8 @@ function BentoContent({ handleClose, project }: Props) {
             </AccordionContent>
           </AccordionItem>
         </Accordion>
+        <a href="/blog" className={cn(buttonVariants({variant:"link"}), "ml-auto mt-4")}> Leer más <ArrowRight className="ml-1 w-4 h-4"/></a>
+
         <div className="mt-auto flex gap-2">
           <a target="_blank" className={cn(buttonVariants({ variant: "default" }), "flex-grow")} href={project.data.demo}>
             Probar

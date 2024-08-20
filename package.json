@@ -39,6 +39,9 @@
   "devDependencies": {
     "@iconify-json/bi": "^1.1.23",
     "@iconify-json/entypo-social": "^1.1.8",
-    "@iconify-json/mdi": "^1.1.64"
+    "@iconify-json/mdi": "^1.1.64",
+    "@typescript-eslint/parser": "^8.2.0",
+    "eslint": "^9.9.0",
+    "eslint-plugin-astro": "^1.2.3"
   }
 }

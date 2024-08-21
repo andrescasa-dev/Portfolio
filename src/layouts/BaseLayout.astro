@@ -1,4 +1,5 @@
 ---
+import ToasterWrapper from "@/components/ToasterWrapper";
 import "@/styles/global.css";
 ---
 
@@ -13,6 +14,7 @@ import "@/styles/global.css";
 	</head>
 	<body>
 		<slot />
+		<ToasterWrapper client:load/>
 		<script>
 			// Add “loaded” class once the document has completely loaded.
 			addEventListener("load", () =>

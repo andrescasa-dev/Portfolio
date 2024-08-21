@@ -6,7 +6,6 @@ import MySkills from "@/components/MySkills";
 import ProjectsBento from "@/components/ProjectsBento";
 import Section from "@/components/Section.astro";
 import { getCollection } from "astro:content";
-import { Toaster } from "sonner";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const projects = await getCollection("projects");
@@ -14,13 +13,12 @@ const MySkillsData = await getCollection("skills");
 ---
 
 <BaseLayout>
-	<Toaster richColors client:load />
 	<main class="grid grid-cols-mainLayout pb-8">
 		<Hero />
 		<Section title="Proyectos">
-			<ProjectsBento 
-				client:load 
-					myProjects={projects.filter(({data})=> data.bento_area)} />
+			<ProjectsBento client:load 
+				myProjects={projects.filter(({data})=> data.bento_area)} 
+			/>
 		</Section>
 		<Section title="Habilidades">
 			<MySkills client:load skillLifeCycle={MySkillsData} />

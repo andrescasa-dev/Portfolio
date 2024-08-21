@@ -18,7 +18,7 @@ const {title, publishDate, tags} = frontmatter
 const formattedDate = (new Date(publishDate)).toLocaleDateString('es-ES', {year: "numeric", month: "long", day:"numeric"})
 ---
 
-<BaseLayout client:load>
+<BaseLayout>
   <div class="prose prose-invert mx-auto my-8">
     <header class="flex flex-col gap-3 items-start" >
       <a href="/" class={cn("not-prose", buttonVariants({variant: "link"}), "px-0") }>

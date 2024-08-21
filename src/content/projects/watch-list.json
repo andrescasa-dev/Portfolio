@@ -2,7 +2,6 @@
   "$schema": "./_projects.schema.json",
   "title": "Watch List",
   "description": "Pequeña página de películas, práctica data fetching con JS",
-  "priority": "quaternary",
   "demo": "https://andrescasa-dev.github.io/watch-list/",
   "code": "https://github.com/andrescasa-dev/watch-list",
   "technologies": [

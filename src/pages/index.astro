@@ -18,7 +18,9 @@ const MySkillsData = await getCollection("skills");
 	<main class="grid grid-cols-mainLayout pb-8">
 		<Hero />
 		<Section title="Proyectos">
-			<ProjectsBento client:load myProjects={projects} />
+			<ProjectsBento 
+				client:load 
+					myProjects={projects.filter(({data})=> data.bento_area)} />
 		</Section>
 		<Section title="Habilidades">
 			<MySkills client:load skillLifeCycle={MySkillsData} />

@@ -5,11 +5,14 @@
       "type": "string",
       "maxLength": 14
     },
+    "read_more": {
+      "type": "string"
+    },
     "description": {
       "type": "string",
       "maxLength": 120
     },
-    "priority": {
+    "bento_area": {
       "type": "string",
       "enum": [
         "primary",
@@ -145,7 +148,6 @@
   "required": [
     "title",
     "description",
-    "priority",
     "demo",
     "code",
     "technologies",

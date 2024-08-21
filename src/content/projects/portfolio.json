@@ -1,8 +1,7 @@
 {
   "$schema": "./_projects.schema.json",
   "title": "Portafolio",
-  "description": "Pásate por el figma de mi Portafolio",
-  "priority": "tertiary",
+  "description": "Pásate por el Figma de mi Portafolio",
   "demo": "https://www.figma.com/file/9jxm1rGXeVhQkMpqhyiGR6/Personal-page?type=design&node-id=0%3A1&mode=design&t=4djVowo3jh78iyzH-1",
   "code": "https://github.com/andrescasa-dev/Portfolio",
   "technologies": [

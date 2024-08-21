@@ -1,10 +1,11 @@
 {
   "$schema": "./_projects.schema.json",
-  "title": "Digital Hippo",
+  "title": "Toasty",
   "description": "Plataforma de comercio electrónico para la compra y venta productos digitales. Guiado por josh tried coding",
-  "bento_area": "tertiary",
+  "bento_area": "secondary",
   "demo": "https://digital-hippo-casa.up.railway.app/",
   "code": "https://github.com/andrescasa-dev/digital-hippo",
+  "read_more":"blogs/cuida",
   "technologies": [
     {
       "category": "frontend",

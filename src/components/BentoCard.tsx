@@ -10,13 +10,13 @@ interface Props {
 }
 
 function BentoCard({ project, handleClick }: Props) {
-  const { title, description, technologies, priority: area } = project.data
+  const { title, description, technologies, bento_area } = project.data
   return (
     <article
       role="button"
       className={cn(
         "card bg-gradient",
-        areas[area],
+        areas[bento_area!],
       )}
       onClick={handleClick}
     >

@@ -1,0 +1,42 @@
+---
+import { buttonVariants } from "@/components/ui/button";
+import {textStyles} from "@/components/Text"
+import BaseLayout from "./BaseLayout.astro";
+import type { MarkdownLayoutProps } from 'astro';
+import { ArrowLeft } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Badge } from "@/components/ui/badge";
+
+type Props = MarkdownLayoutProps<{
+  title: string
+  publishDate: string
+  tags: string[]
+}>
+
+const {frontmatter} = Astro.props
+const {title, publishDate, tags} = frontmatter
+const formattedDate = (new Date(publishDate)).toLocaleDateString('es-ES', {year: "numeric", month: "long", day:"numeric"})
+---
+
+<BaseLayout client:load>
+  <div class="prose prose-invert mx-auto my-8">
+    <header class="flex flex-col gap-3 items-start" >
+      <a href="/" class={cn("not-prose", buttonVariants({variant: "link"}), "px-0") }>
+        <ArrowLeft className="w-4 h-4 mr-1"/> Volver
+      </a>
+      <time class={cn("not-prose", textStyles({ type: "eyebrow" }))}>
+        {formattedDate}
+      </time>
+      <h1 class="m-0 mb-2">{title}</h1>
+      <div class="flex gap-2">
+        {tags.map((tag)=>{
+          return <Badge>{tag}</Badge>
+        })}
+      </div>
+    </header>
+    <br>
+    <main >
+      <slot/>
+    </main>
+  </div>
+</BaseLayout>

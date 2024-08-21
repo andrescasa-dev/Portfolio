@@ -90,7 +90,9 @@ const hobbies = defineCollection({
 const projectDetails = defineCollection({
   type: "content",
   schema: z.object({
-    title: z.string()
+    title: z.string(),
+    publishDate: z.string(),
+    tags: z.array(z.string()),
   })
 })
 

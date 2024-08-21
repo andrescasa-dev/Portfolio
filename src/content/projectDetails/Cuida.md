@@ -1,4 +1,5 @@
 ---
+layout: "../../layouts/BlogMDLayout.astro"
 title: "Cuida, Plataforma para Refugios de Animales Locales"
 publishDate: "2024-08-21"
 tags: ["UX/UI Design", "Research", "Frontend", "Design System"]

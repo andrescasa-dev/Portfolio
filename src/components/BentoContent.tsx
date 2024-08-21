@@ -54,7 +54,7 @@ function BentoContent({ handleClose, project }: Props) {
               {project.data.challenges.map(challenge => (
                 <li key={crypto.randomUUID()}>
                   <h3 className="font-bold text-base md:text-lg lg:text-lg mt-2">{challenge.title}</h3>
-                  <p className="mt-1.5"><b>Solución: </b>{challenge.solution}</p>
+                  <p className="mt-1.5">{challenge.solution}</p>
                 </li>
               ))}
             </ul>

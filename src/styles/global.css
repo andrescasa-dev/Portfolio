@@ -97,7 +97,7 @@
   }
 
   .list {
-    @apply list-disc pl-6 marker:text-primary
+    @apply list-disc pl-6 marker:text-primary flex flex-col gap-1
   }
 
 }

@@ -3,7 +3,7 @@
   "properties": {
     "title": {
       "type": "string",
-      "maxLength": 14
+      "maxLength": 18
     },
     "read_more": {
       "type": "string"
@@ -125,7 +125,7 @@
         "properties": {
           "title": {
             "type": "string",
-            "maxLength": 40
+            "maxLength": 43
           },
           "solution": {
             "type": "string"

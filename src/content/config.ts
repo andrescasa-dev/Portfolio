@@ -15,7 +15,7 @@ const techCategorySchema = z.object({
 })
 
 const challengesSchema = z.object({
-  title: z.string().max(40),
+  title: z.string().max(43),
   solution: z.string()
 })
 
@@ -25,7 +25,7 @@ export type Technologies = z.infer<typeof techCategorySchema>
 const projects = defineCollection({
   type: "data",
   schema: z.object({
-    title: z.string().max(14),
+    title: z.string().max(18),
     read_more: z.string().optional(),
     description: z.string().max(120),
     bento_area: z.enum(["primary", "secondary", "tertiary", "quaternary"]).optional(),

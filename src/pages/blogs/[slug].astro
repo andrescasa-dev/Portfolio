@@ -1,0 +1,26 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+
+export const getStaticPaths = (async () => {
+  const projectDetails = await getCollection('projectDetails')
+
+  return projectDetails.map((projectDetail)=>{
+    return {
+      params: {slug: projectDetail.slug},
+      props: {blog: projectDetail}
+    }
+  });
+}) satisfies GetStaticPaths;
+
+const {blog} = Astro.props
+const {Content} = await blog.render()
+
+---
+
+<BaseLayout>
+  <main class="prose prose-invert mx-auto my-8">
+    <Content/>
+  </main>
+</BaseLayout>

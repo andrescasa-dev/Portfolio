@@ -96,10 +96,10 @@ const projectDetails = defineCollection({
 
 export const collections = {
   'projects': projects,
+  'projectDetails': projectDetails,
   'journeyPeriods': journeyPeriods,
   'skills': skills,
   'hobbies': hobbies,
-  'projectDetails': projectDetails
 }
 
 try {

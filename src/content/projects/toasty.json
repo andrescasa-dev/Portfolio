@@ -19,28 +19,12 @@
           "icon": "React"
         },
         {
-          "name": "NextJS app router",
-          "icon": "NextJS14"
-        },
-        {
           "name": "Tailwind",
           "icon": "Tailwind"
         },
         {
           "name": "Html5",
           "icon": "Html"
-        },
-        {
-          "name": "Zustand",
-          "icon": "Zustand"
-        },
-        {
-          "name": "Zod",
-          "icon": "Zod"
-        },
-        {
-          "name": "Shadcn",
-          "icon": "Shadcn"
         }
       ]
     },
@@ -52,24 +36,21 @@
           "icon": "TypeScript"
         },
         {
-          "name": "Express",
-          "icon": "Express"
-        },
-        {
           "name": "NodeJS",
           "icon": "NodeJS"
         },
         {
-          "name": "TRPC",
-          "icon": "TRPC"
-        },
+          "name": "NPM",
+          "icon": "Todoist"
+        }
+      ]
+    },
+    {
+      "category": "design",
+      "items": [
         {
-          "name": "PayloadCMS",
-          "icon": "PayloadCMS"
-        },
-        {
-          "name": "Stripe",
-          "icon": "Stripe"
+          "name": "Figma",
+          "icon": "Figma"
         }
       ]
     }

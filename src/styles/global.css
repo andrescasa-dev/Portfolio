@@ -33,6 +33,7 @@
     --input: 43 96% 56%;
     --ring: 43 96% 56%;
 
+    --filter: 0 0% 13.7%;
     --radius: 0.75rem;
   }
 
@@ -92,15 +93,18 @@
     @apply text-xs md:text-sm opacity-60
   }
 
-  .card {
-    @apply border border-border rounded-sm px-4 py-7 md:px-7 md:py-10
-  }
+}
 
+@layer components {
   .list {
     @apply list-disc pl-6 marker:text-primary flex flex-col gap-1
   }
 
+  .not-col-start-2 > *:not(.col-start-2) {
+    @apply col-start-2;
+  }
 }
+
 
 .grid-cols-mainLayout>* {
   grid-column-start: 2;

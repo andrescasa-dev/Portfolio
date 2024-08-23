@@ -12,12 +12,8 @@ export default {
 			},
 		},
 		extend: {
-			
 			screens: {
 				"xs": "405px"
-			},
-			backgroundImage: {
-				gradient: 'linear-gradient(0deg, rgba(35,35,35,1) 0%, rgba(0,0,0,0) 100%)'
 			},
 			gridTemplateColumns: {
 				mainLayout: "minmax(1rem, 1fr) minmax(0, 74rem) minmax(1rem, 1fr)",
@@ -33,6 +29,7 @@ export default {
 				ring: "hsl(var(--ring))",
 				background: "hsl(var(--background))",
 				foreground: "hsl(var(--foreground))",
+				filter: "hsl(var(--filter))",
 				primary: {
 					DEFAULT: "hsl(var(--primary))",
 					foreground: "hsl(var(--primary-foreground))",

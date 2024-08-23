@@ -7,15 +7,7 @@
   "code": "https://github.com/andrescasa-dev/digital-hippo",
   "read_more":"blogs/cuida",
   "technologies": [
-    {
-      "category": "design",
-      "items": [
-        {
-          "name": "Figma",
-          "icon": "Figma"
-        }
-      ]
-    },
+    
     {
       "category": "frontend",
       "items": [
@@ -51,6 +43,19 @@
         {
           "name": "Strapi",
           "icon": "Todoist"
+        },
+        {
+          "name": "JavaScript",
+          "icon": "JavaScript"
+        }
+      ]
+    },
+    {
+      "category": "design",
+      "items": [
+        {
+          "name": "Figma",
+          "icon": "Figma"
         }
       ]
     }

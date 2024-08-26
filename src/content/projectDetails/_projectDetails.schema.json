@@ -12,12 +12,22 @@
       "items": {
         "type": "string"
       }
+    },
+    "demo": {
+      "type": "string",
+      "format": "uri"
+    },
+    "code": {
+      "type": "string",
+      "format": "uri"
     }
   },
   "required": [
     "title",
     "publishDate",
-    "tags"
+    "tags",
+    "demo",
+    "code"
   ],
   "additionalProperties": false,
   "$schema": "http://json-schema.org/draft-07/schema#"

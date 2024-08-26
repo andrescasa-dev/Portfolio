@@ -94,6 +94,8 @@ const projectDetails = defineCollection({
     title: z.string(),
     publishDate: z.string(),
     tags: z.array(z.string()),
+    demo: z.string().url(),
+    code: z.string().url()
   })
 })
 

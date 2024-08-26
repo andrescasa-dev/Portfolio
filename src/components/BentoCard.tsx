@@ -51,7 +51,6 @@ function BentoCard({ project, handleClick }: Props) {
               </section>
             ))
           }
-        
         </ScrollArea>
       </section>
     </Card>

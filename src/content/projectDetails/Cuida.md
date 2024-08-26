@@ -3,6 +3,8 @@ layout: "../../layouts/BlogMDLayout.astro"
 title: "Cuida, Plataforma para Refugios de Animales Locales"
 publishDate: "2024-08-21"
 tags: ["UX/UI Design", "Research", "Frontend", "Design System"]
+demo: "https://digital-hippo-casa.up.railway.app/"
+code: "https://github.com/andrescasa-dev/digital-hippo"
 ---
 
 Cuida es un proyecto diseñado para mejorar la visibilidad y el apoyo a los refugios de animales en mi ciudad. Este proyecto representa un esfuerzo integral de investigación, diseño y desarrollo, aplicando metodologías modernas como el design thinking para crear una solución digital que no solo es funcional, sino también, pretende impactar en la vida de los animales y las personas involucradas.

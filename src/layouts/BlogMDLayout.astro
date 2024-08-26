@@ -1,5 +1,5 @@
 ---
-import { buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import {textStyles} from "@/components/Text"
 import BaseLayout from "./BaseLayout.astro";
 import type { MarkdownLayoutProps } from 'astro';
@@ -11,15 +11,17 @@ type Props = MarkdownLayoutProps<{
   title: string
   publishDate: string
   tags: string[]
+  code: string
+  demo: string
 }>
 
 const {frontmatter, headings} = Astro.props
-const {title, publishDate, tags} = frontmatter
+const {title, publishDate, tags, code, demo} = frontmatter
 const formattedDate = (new Date(publishDate)).toLocaleDateString('es-ES', {year: "numeric", month: "long", day:"numeric"})
 ---
 
 <BaseLayout>
-  <div class="prose prose-invert mx-auto my-8">
+  <div class="prose prose-invert ml-[44%] -translate-x-1/2 my-8">
     <header class="flex flex-col gap-3 items-start" >
       <a href="/" class={cn("not-prose", buttonVariants({variant: "link"}), "px-0") }>
         <ArrowLeft className="w-4 h-4 mr-1"/> Volver
@@ -35,17 +37,27 @@ const formattedDate = (new Date(publishDate)).toLocaleDateString('es-ES', {year:
       </div>
     </header>
     <br>
-    <main >
+    <main class="pb-6">
       <slot/>
+      <hr/>
+      <div class="mt-auto flex gap-2 not-prose">
+        <a target="_blank" class={cn(buttonVariants({ variant: "default" }), "flex-grow")} href={demo}>
+          Probar
+        </a>
+        <a target="_blank" class={cn(buttonVariants({ variant: "outline" }), "flex-grow")} href={code}>
+          Código
+        </a>
+      </div>
     </main>
-    <aside class="fixed right-0 top-1/2 -translate-y-1/2 ">
-      <ol>
-        {headings.map(({slug, text}) => (
-          <li>
-            <a href={`#${slug}`}> {text}</a>
-          </li>
-        ))}
-      </ol>
-    </aside>
   </div>
+  <aside class="fixed right-[5%] top-1/2 -translate-y-1/2 prose prose-invert ">
+    <h2>Contenido</h2>
+    <ol>
+      {headings.map(({slug, text}) => (
+        <li>
+          <a href={`#${slug}`}> {text}</a>
+        </li>
+      ))}
+    </ol>
+  </aside>
 </BaseLayout>

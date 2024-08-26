@@ -41,7 +41,7 @@ function BentoContent({ handleClose, project }: Props) {
       <section aria-label="Project details">
         <Accordion className={cn("mt-3 md:mt-6", contentConfig[bento_area].accordion)} type="single" collapsible>
           <AccordionItem value="item-1">
-            <AccordionTrigger className="subtitle">Funcionalidades Principales</AccordionTrigger>
+            <AccordionTrigger className="subtitle">Características</AccordionTrigger>
             <AccordionContent className="base">
               <ul className="list">
                 {project.data.main_features.map(features => (
@@ -54,11 +54,11 @@ function BentoContent({ handleClose, project }: Props) {
           <AccordionItem value="item-2">
             <AccordionTrigger className="subtitle">Retos</AccordionTrigger>
             <AccordionContent className="base">
-              <ul>
+              <ul className="flex flex-col gap-2.5">
                 {project.data.challenges.map(challenge => (
                   <li key={crypto.randomUUID()}>
-                    <h3 className="font-bold text-base md:text-lg lg:text-lg mt-2">{challenge.title}</h3>
-                    <p className="mt-1.5">{challenge.solution}</p>
+                    <h3 className="font-bold text-base md:text-lg lg:text-lg mb-1">{challenge.title}</h3>
+                    <p className="">{challenge.solution}</p>
                   </li>
                 ))}
               </ul>
@@ -80,14 +80,14 @@ function BentoContent({ handleClose, project }: Props) {
           <a 
             href={project.data.read_more}
             className={cn(buttonVariants({variant:"link"}), "ml-auto mt-4 px-0")}> 
-            Leer más
+            Conoce su historia completa
             <ArrowRight className="ml-1 w-4 h-4"/>
           </a>
         ) }
       </section>
       <div className="mt-auto flex gap-2">
         <a target="_blank" className={cn(buttonVariants({ variant: "default" }), "flex-grow")} href={project.data.demo}>
-          Probar
+          Visitar
         </a>
         <a target="_blank" className={cn(buttonVariants({ variant: "outline" }), "flex-grow")} href={project.data.code}>
           Código

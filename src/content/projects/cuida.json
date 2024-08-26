@@ -1,10 +1,10 @@
 {
   "$schema": "./_projects.schema.json",
   "title": "Cuida",
-  "description": "Plataforma de visibilidad para Refugios de Animales en Cúcuta",
+  "description": "Plataforma para la visibilidad de Refugios Animales de Cúcuta Colombia. Desarrollo de producto completo.",
   "bento_area": "primary",
-  "demo": "https://digital-hippo-casa.up.railway.app/",
-  "code": "https://github.com/andrescasa-dev/digital-hippo",
+  "demo": "https://www.figma.com/design/422k9OQmvHMQZq9JQ3Lzdd/Cuida?node-id=0-1&t=hPnuh0Ziz6D9XCvO-0",
+  "code": "https://github.com/andrescasa-dev/cuida-frontend",
   "read_more":"blogs/cuida",
   "technologies": [
     
@@ -61,7 +61,6 @@
     }
   ],
   "main_features": [
-    "Producto Real.",
     "Diseñado a partir de investigación de mercado.",
     "Necesidades del usuario como pieza central.",
     "Consideración de Identidad de marca.",
@@ -89,8 +88,8 @@
   ],
   "what_i_learned": [
     "Entendí el proceso completo de un producto digital, desde el branding hasta el desarrollo.",
-    "La consistencia y una clara jerarquía son más importantes que los detalles visuales en una interfaz gráfica.",
-    "Un buen software se basa en la mejora continua, no en la perfección inicial.",
+    "Comprendí que la consistencia y una clara jerarquía son más importantes que los detalles visuales en una interfaz gráfica.",
+    "Entendí que un buen software se basa en la mejora continua, no en la perfección inicial.",
     "Mejoré mis habilidades en Figma para diseñar prototipos de baja y alta fidelidad."
   ]
   

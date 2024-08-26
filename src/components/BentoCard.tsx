@@ -1,10 +1,10 @@
 
 import { areas } from "@/config";
 import { cn } from "@/lib/utils";
-import type { CollectionEntry } from "astro:content";
-import Icon from "./icons/Icon";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
-import { ScrollBar } from "./ui/scroll-area";
+import type { CollectionEntry } from "astro:content";
+import Card from "./Card";
+import Icon from "./icons/Icon";
 
 interface Props {
   project: CollectionEntry<'projects'>
@@ -19,15 +19,15 @@ function BentoCard({ project, handleClick }: Props) {
       return msg
   }
   return (
-    <article
+    <Card 
+      as='section'
       role="button"
+      onClick={handleClick}
       className={cn(
-        "relative bg-gradient-to-b from-filter to-transparent py-7 md:py-10 border border-border rounded-sm md:pr-0 grid auto-rows-min grid-cols-[1.75rem_1fr_1.75rem] [&>*:not(.col-start-1)]:col-start-2",
         "after:content-[''] after:absolute after:inset-y-0 after:right-0 after:w-6 after:rounded-r-sm after:bg-gradient-to-l after:from-filter after:to-transparent",
         "before:content-[''] before:absolute before:inset-y-0 before:left-0 before:w-6 before:rounded-r-sm before:bg-gradient-to-r before:from-filter before:to-transparent before:z-10 before:rounded-sm",
         areas[bento_area],
       )}
-      onClick={handleClick}
     >
       <h2 className="title font-semibold ">{title}</h2>
       <p className="base mt-2">{description}</p>
@@ -54,7 +54,7 @@ function BentoCard({ project, handleClick }: Props) {
         
         </ScrollArea>
       </section>
-    </article>
+    </Card>
   )
 }
 

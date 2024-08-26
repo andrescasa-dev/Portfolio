@@ -9,6 +9,7 @@ Cuida es un proyecto diseñado para mejorar la visibilidad y el apoyo a los refu
 
 ![Screenshot del design system de cuida](../../../public/images/Pasted_image_20240813152339.png)
 
+
 ## Inspiración del Proyecto
 
 Cuida nació inspirado por [PetFinder](https://www.petfinder.com/), una plataforma enfocada en la adopción de mascotas en Estados Unidos. Al descubrirla, pensé en adaptar esta idea a mi ciudad, donde noté una falta de iniciativas similares. Realicé una investigación de mercado inicial para identificar plataformas existentes, como [RSPCA](https://www.adoptapet.com.au/), [AdoptaNoCompres](https://www.adoptanocompres.org/conocelos-aqui/), y [AdoptaPet](https://www.adoptapet.com.au/), todas ubicadas en países desarrollados. Esto me permitió entender mejor el diseño y las funcionalidades predominantes en el mercado global.

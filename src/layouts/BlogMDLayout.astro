@@ -13,7 +13,7 @@ type Props = MarkdownLayoutProps<{
   tags: string[]
 }>
 
-const {frontmatter} = Astro.props
+const {frontmatter, headings} = Astro.props
 const {title, publishDate, tags} = frontmatter
 const formattedDate = (new Date(publishDate)).toLocaleDateString('es-ES', {year: "numeric", month: "long", day:"numeric"})
 ---
@@ -38,5 +38,14 @@ const formattedDate = (new Date(publishDate)).toLocaleDateString('es-ES', {year:
     <main >
       <slot/>
     </main>
+    <aside class="fixed right-0 top-1/2 -translate-y-1/2 ">
+      <ol>
+        {headings.map(({slug, text}) => (
+          <li>
+            <a href={`#${slug}`}> {text}</a>
+          </li>
+        ))}
+      </ol>
+    </aside>
   </div>
 </BaseLayout>

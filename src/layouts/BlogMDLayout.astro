@@ -21,7 +21,7 @@ const formattedDate = (new Date(publishDate)).toLocaleDateString('es-ES', {year:
 ---
 
 <BaseLayout>
-  <div class="prose prose-invert ml-[44%] -translate-x-1/2 my-8">
+  <div class="prose prose-invert prose-a:text-accent ml-[44%] -translate-x-1/2 my-8">
     <header class="flex flex-col gap-3 items-start" >
       <a href="/" class={cn("not-prose", buttonVariants({variant: "link"}), "px-0") }>
         <ArrowLeft className="w-4 h-4 mr-1"/> Volver
@@ -29,7 +29,7 @@ const formattedDate = (new Date(publishDate)).toLocaleDateString('es-ES', {year:
       <time class={cn("not-prose", textStyles({ type: "eyebrow" }))}>
         {formattedDate}
       </time>
-      <h1 class="m-0 mb-2">{title}</h1>
+      <h1 id="title" class="m-0 mb-2">{title}</h1>
       <div class="flex gap-2">
         {tags.map((tag)=>{
           return <Badge>{tag}</Badge>
@@ -50,10 +50,10 @@ const formattedDate = (new Date(publishDate)).toLocaleDateString('es-ES', {year:
       </div>
     </main>
   </div>
-  <aside class="fixed right-[5%] top-1/2 -translate-y-1/2 prose prose-invert ">
+  <aside class="fixed right-[5%] top-1/2 -translate-y-1/2 prose prose-invert prose-a:text-accent">
     <h2>Contenido</h2>
     <ol>
-      {headings.map(({slug, text}) => (
+      {[{slug: "title", text: "Descripción"},...headings].map(({slug, text}) => (
         <li>
           <a href={`#${slug}`}> {text}</a>
         </li>

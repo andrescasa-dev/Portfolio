@@ -6,7 +6,20 @@
       "maxLength": 18
     },
     "read_more": {
-      "type": "string"
+      "type": "object",
+      "properties": {
+        "href": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "href",
+        "label"
+      ],
+      "additionalProperties": false
     },
     "description": {
       "type": "string",

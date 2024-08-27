@@ -1,11 +1,11 @@
 {
   "$schema": "./_projects.schema.json",
   "title": "Toasty",
-  "description": "Plataforma de comercio electrónico para la compra y venta productos digitales. Guiado por josh tried coding",
+  "description": "Paquete NPM que permite crear notificaciones emergentes personalizables. Documentación y demo incluidas.",
   "bento_area": "secondary",
   "demo": "https://digital-hippo-casa.up.railway.app/",
-  "code": "https://github.com/andrescasa-dev/digital-hippo",
-  "read_more":"blogs/cuida",
+  "code": "https://github.com/andrescasa-dev/toasty",
+  "read_more": {"label": "Ver Documentación", "href": "https://www.npmjs.com/package/toasty-casa"},
   "technologies": [
     {
       "category": "frontend",
@@ -56,25 +56,32 @@
     }
   ],
   "main_features": [
-    "Comprar con tarjeta de crédito usando stripe.",
-    "Publicar productos digitales a la venta con un CMS personalizado.",
-    "Autentificación de Usuario.",
-    "Optimización del SEO.",
-    "Alto rendimiento Web.",
-    "Tipado de datos en Frontend y Backend con tRPC.",
-    "Diseño responsivo."
+    "Compatible con cualquier proyecto de React con Tailwind",
+    "Fácil de Personalizar",
+    "Completamente accessible",
+    "Configuración general o particular para cada notificación",
+    "Fácil de usar, debido al uso de patrones de diseño de React",
+    "Configuración automático por medio de CLI de NodeJS."
   ],
   "challenges": [
     {
-      "title": "Servidor web hibrido NextJS + PayloadCMS",
-      "solution": "Leí la documentación de Payload y busqué información sobre Express.js para entender cómo configurarlo y cómo el servidor procesa las peticiones."
+      "title": "Crear comandos con NodeJS",
+      "solution": "Me inspiré de la configuración automática de Shadcn, leí parte de su codebase y comprendí como adaptar su solución a mi proyecto. El uso de IA fue crucial para agilizar mi investigación"
+    },
+    {
+      "title": "Experiencia para el desarrollador intuitiva",
+      "solution": "Estudie los patrones de diseño más importantes de React e implementé los necesarios, as su vez los componentes están completamente tipados garantizando una experiencia cómoda para cualquier desarrollador que use mi proyecto"
+    },
+    {
+      "title": "Accesibilidad",
+      "solution": "Para ello seguí las pautas de W3C y probe el componente usando el lector de pantalla NVDA"
     }
+    
   ],
   "what_i_learned": [
-    "Webhooks y el ciclo de pago con stripe",
-    "Creación de un backend con PayloadCMS y su debida autorización y autentificación",
-    "Server components y su proceso de hidratación",
-    "Uso de express para crear endpoints y usar middlewares",
-    "Optimización de imágenes y Open graph para el SEO"
+    "Aprendí a desarrollar comandos CLI con NodeJS",
+    "Comprendí la importancia de CVA y los monorepos multipaquetes",
+    "Me familiaricé con patrones de diseño de React como el patron Provider",
+    "Mejoré mis habilidades con TypeScript"
   ]
 }

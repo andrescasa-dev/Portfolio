@@ -26,7 +26,10 @@ const projects = defineCollection({
   type: "data",
   schema: z.object({
     title: z.string().max(18),
-    read_more: z.string().optional(),
+    read_more: z.object({
+      "href": z.string(),
+      "label": z.string()
+    }).optional(),
     description: z.string().max(120),
     bento_area: z.enum(["primary", "secondary", "tertiary", "quaternary"]).optional(),
     demo: z.string().url(),

@@ -21,6 +21,16 @@ const formattedDate = (new Date(publishDate)).toLocaleDateString('es-ES', {year:
 ---
 
 <BaseLayout>
+  <aside class="fixed right-[5%] top-1/2 -translate-y-1/2 prose prose-invert prose-a:text-accent">
+    <h2>Contenido</h2>
+    <ol>
+      {[{slug: "title", text: "Descripción"},...headings].map(({slug, text}) => (
+        <li>
+          <a href={`#${slug}`}> {text}</a>
+        </li>
+      ))}
+    </ol>
+  </aside>
   <div class="prose prose-invert prose-a:text-accent ml-[44%] -translate-x-1/2 my-8">
     <header class="flex flex-col gap-3 items-start" >
       <a href="/" class={cn("not-prose", buttonVariants({variant: "link"}), "px-0") }>
@@ -42,7 +52,7 @@ const formattedDate = (new Date(publishDate)).toLocaleDateString('es-ES', {year:
       <hr/>
       <div class="mt-auto flex gap-2 not-prose">
         <a target="_blank" class={cn(buttonVariants({ variant: "default" }), "flex-grow")} href={demo}>
-          Probar
+          Vistiar
         </a>
         <a target="_blank" class={cn(buttonVariants({ variant: "outline" }), "flex-grow")} href={code}>
           Código
@@ -50,14 +60,5 @@ const formattedDate = (new Date(publishDate)).toLocaleDateString('es-ES', {year:
       </div>
     </main>
   </div>
-  <aside class="fixed right-[5%] top-1/2 -translate-y-1/2 prose prose-invert prose-a:text-accent">
-    <h2>Contenido</h2>
-    <ol>
-      {[{slug: "title", text: "Descripción"},...headings].map(({slug, text}) => (
-        <li>
-          <a href={`#${slug}`}> {text}</a>
-        </li>
-      ))}
-    </ol>
-  </aside>
+ 
 </BaseLayout>

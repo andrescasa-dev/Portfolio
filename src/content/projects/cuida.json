@@ -5,7 +5,10 @@
   "bento_area": "primary",
   "demo": "https://www.figma.com/design/422k9OQmvHMQZq9JQ3Lzdd/Cuida?node-id=0-1&t=hPnuh0Ziz6D9XCvO-0",
   "code": "https://github.com/andrescasa-dev/cuida-frontend",
-  "read_more":"blogs/cuida",
+  "read_more":{
+    "href": "blogs/cuida",
+    "label": "Conoce su historia"
+  },
   "technologies": [
     
     {

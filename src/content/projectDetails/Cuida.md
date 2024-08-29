@@ -14,7 +14,7 @@ Este proyecto representa un esfuerzo integral de investigación, diseño y desar
 Cuida nació inspirado por [PetFinder](https://www.petfinder.com/), una plataforma enfocada en la adopción de mascotas en Estados Unidos. Al descubrirla, pensé en adaptar esta idea a mi ciudad, donde noté una falta de iniciativas similares. Realicé una investigación de mercado inicial para identificar plataformas existentes, como [RSPCA](https://www.adoptapet.com.au/), [AdoptaNoCompres](https://www.adoptanocompres.org/conocelos-aqui/), y [AdoptaPet](https://www.adoptapet.com.au/), todas ubicadas en países desarrollados. Esto me permitió entender mejor el diseño y las funcionalidades predominantes en el mercado global.
 
 <figure>
-  <img src="../../../public/images/Pasted%20image%2020240812152310.png" alt="Mood Board Inicial de Cuida">
+  <img src="/images/Pasted%20image%2020240812152310.png" alt="Mood Board Inicial de Cuida">
   <figcaption>Mood Board Inicial de Cuida</figcaption>
 </figure>
 
@@ -25,12 +25,12 @@ Además, descubrí múltiples refugios locales como [Refugio Naty Sanchez](https
 
 Inicialmente, planteé abarcar varios servicios: donación, adopción, compra de productos y contacto, con un enfoque principal en la adopción.
 
-![mood board](../../../public/images/Pasted%20image%2020240812144857.png)
+![mood board](/images/Pasted%20image%2020240812144857.png)
 
 La idea era que los habitantes de Cúcuta pudieran explorar qué mascotas estaban disponibles para adopción en una experiencia rápida y agradable.
 
 <figure>
-  <img src="../../../public/images/Pasted%20image%2020240812145138.png" alt="Prototipo de la sección de búsqueda de mascotas de Cuida">
+  <img src="/images/Pasted%20image%2020240812145138.png" alt="Prototipo de la sección de búsqueda de mascotas de Cuida">
   <figcaption>Primer prototipo de la búsqueda de mascotas en adopción</figcaption>
 </figure>
 
@@ -38,10 +38,10 @@ La idea era que los habitantes de Cúcuta pudieran explorar qué mascotas estaba
 
 Una vez diseñado el primero prototipo, realicé entrevistas con refugios, siguiendo las pautas del [curso UX Research de UXCEL](https://app.uxcel.com/courses/ux-research). Estas entrevistas, como la realizada a el [Refugio Naty Sanchez](https://www.instagram.com/refugioanimalnattysanchez/), me permitieron comprender mejor los desafíos que enfrentan los refugios. Descubrí que la adopción no era su principal preocupación, en cambio, su mayor reto era la falta de ingresos consistentes, lo que los llevaba a depender de rifas y donaciones ocasionales.
 
-![mood board](../../../public/images/Pasted%20image%2020240813154634.png)
+![mood board](/images/Pasted%20image%2020240813154634.png)
 
 <figure>
-  <img src="../../../public/images/Pasted%20image%2020240813154702.png" alt="Fotos dentro del Refugio De Naty Sanchez">
+  <img src="/images/Pasted%20image%2020240813154702.png" alt="Fotos dentro del Refugio De Naty Sanchez">
   <figcaption>Fotos tomadas en el Refugio Animal Naty Sanchez, momentos después de haber realizado la entrevista</figcaption>
 </figure>
 
@@ -58,14 +58,14 @@ Aunque cometí el error de no definir un design system desde el principio, cada 
 Al darme cuenta que faltaba consistencia en el diseño, realicé una auditoría UX/UI para establecer un design system y así profesionalizar el diseño. Claro está, después de una debida investigación de cómo hacerlo para empezar con el pie derecho.
 
 <figure>
-  <img src="../../../public/images/Pasted%20image%2020240813152004.png" alt="Screenshot general del design system">
+  <img src="/images/Pasted%20image%2020240813152004.png" alt="Screenshot general del design system">
   <figcaption>Screenshot general del design system</figcaption>
 </figure>
 
 El resultado fue un diseño más coherente y profesional que refleja los valores de la marca y permite un escalado eficiente gracias al uso del atomic design.
 
 <figure>
-  <img src="../../../public/images/Pasted%20image%2020240813152339.png" alt="Screenshot general del diseño final de Cuida">
+  <img src="/images/Pasted%20image%2020240813152339.png" alt="Screenshot general del diseño final de Cuida">
   <figcaption>Screenshot general del diseño final de Cuida</figcaption>
 </figure>
 

@@ -29,7 +29,7 @@ function BentoCard({ project, handleClick }: Props) {
         areas[bento_area],
       )}
     >
-      <h2 className="title font-semibold ">{title}</h2>
+      <h2 className="title ">{title}</h2>
       <p className="base mt-2">{description}</p>
       <section aria-label="Used Technologies" className="overflow-x-scroll col-start-1 col-end-[-1] px-7">
         <ScrollArea className="flex mt-8">

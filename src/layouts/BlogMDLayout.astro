@@ -36,7 +36,7 @@ const formattedDate = (new Date(publishDate)).toLocaleDateString('es-ES', {year:
         })}
       </div>
     </header>
-    <aside class="col-start-2 prose prose-invert prose-a:text-accent md:col-start-3 md:row-start-2 md:sticky md:top-2">
+    <aside class="col-start-2 prose prose-invert prose-a:text-accent md:col-start-3 md:row-start-2 md:sticky md:top-6 md:self-start">
       <h2>Contenido</h2>
       <ol>
         {[{slug: "title", text: "Descripción"},...headings].map(({slug, text}) => (

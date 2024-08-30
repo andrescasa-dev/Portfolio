@@ -31,11 +31,11 @@ function BentoCard({ project, handleClick }: Props) {
     >
       <h2 className="title ">{title}</h2>
       <p className="base mt-2">{description}</p>
-      <section aria-label="Used Technologies" className="overflow-x-scroll col-start-1 col-end-[-1] px-7">
+      <section aria-label="Used Technologies" className="overflow-x-scroll col-start-1 col-end-[-1] px-7 snap-mandatory snap-x">
         <ScrollArea className="flex mt-8">
           {
             technologies.map(({ category, items }) => (
-              <section key={crypto.randomUUID()} className="mb-2 pr-7">
+              <section key={crypto.randomUUID()} className="mb-4 pr-7 snap-center">
                 <h3 className="font-medium capitalize">{category}</h3>
                 <ul className={cn("grid gap-2 mt-2", {"grid-cols-[repeat(3,40px)]": items.length >= 3, "grid-cols-[repeat(2,40px)]": items.length === 2, "grid-cols-[repeat(1,40px)]": items.length === 1, })}>
                   {items.map(({ name, icon }) => (

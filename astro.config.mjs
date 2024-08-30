@@ -9,5 +9,10 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
   integrations: [react(), tailwind({
     applyBaseStyles: false
-  }), icon(), mdx()]
+  }), icon(), mdx()],
+  vite: {
+    define: {
+      'process.env.ASTRO_DEVTOOLBAR_DISABLED': 'true',
+    },
+  },
 });

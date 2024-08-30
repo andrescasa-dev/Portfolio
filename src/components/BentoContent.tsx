@@ -85,7 +85,7 @@ function BentoContent({ handleClose, project }: Props) {
           </a>
         ) }
       </section>
-      <div className="mt-auto flex gap-2">
+      <div className="mt-auto flex gap-2 flex-wrap md:flex-nowrap">
         <a target="_blank" className={cn(buttonVariants({ variant: "default" }), "flex-grow")} href={project.data.demo}>
           Visitar
         </a>

@@ -4,7 +4,7 @@ import type { ComponentPropsWithoutRef, ReactNode } from "react"
 interface CardProps {
   className?: string, 
   children: ReactNode, 
-  as: 'div' | 'section' | 'article'
+  as: 'div' | 'section' | 'article' | 'button'
 } 
 
 function Card ({className, children, as: Tag, ...delegate}: CardProps & ComponentPropsWithoutRef<'section'>) {

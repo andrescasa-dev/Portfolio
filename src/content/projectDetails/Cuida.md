@@ -1,6 +1,6 @@
 ---
 layout: "../../layouts/BlogMDLayout.astro"
-title: "Cuida, Plataforma para Refugios de Animales Locales"
+title: "Cuida, Plataforma para Refugios Animales"
 publishDate: "2024-08-21"
 tags: ["Frontend","Design System", "UX/UI Design", "Research"]
 demo: "https://www.figma.com/design/422k9OQmvHMQZq9JQ3Lzdd/Cuida?node-id=0-1&t=hPnuh0Ziz6D9XCvO-0"

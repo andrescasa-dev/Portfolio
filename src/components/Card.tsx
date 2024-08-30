@@ -13,7 +13,7 @@ function Card ({className, children, as: Tag, ...delegate}: CardProps & Componen
       {...delegate}
       className={
         cn(
-          'relative bg-gradient-to-b from-filter to-transparent py-7 md:py-10 border border-border rounded-sm md:pr-0 grid auto-rows-min grid-cols-[1.75rem_1fr_1.75rem] [&>*:not(.col-start-1)]:col-start-2',
+          'relative bg-gradient-to-b from-filter to-transparent py-4 md:py-6 border border-border rounded-sm md:pr-0 grid auto-rows-min grid-cols-[1rem_1fr_1rem] [&>*:not(.col-start-1)]:col-start-2',
           className
       )}
     >

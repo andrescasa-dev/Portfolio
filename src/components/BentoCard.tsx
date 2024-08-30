@@ -24,8 +24,8 @@ function BentoCard({ project, handleClick }: Props) {
       role="button"
       onClick={handleClick}
       className={cn(
-        "after:content-[''] after:absolute after:inset-y-0 after:right-0 after:w-6 after:rounded-r-sm after:bg-gradient-to-l after:from-filter after:to-transparent",
-        "before:content-[''] before:absolute before:inset-y-0 before:left-0 before:w-6 before:rounded-r-sm before:bg-gradient-to-r before:from-filter before:to-transparent before:z-10 before:rounded-sm",
+        "after:content-[''] after:absolute after:inset-y-0 after:right-0 after:w-4 after:rounded-r-sm after:bg-gradient-to-l after:from-filter after:to-transparent",
+        "before:content-[''] before:absolute before:inset-y-0 before:left-0 before:w-4 before:rounded-r-sm before:bg-gradient-to-r before:from-filter before:to-transparent before:z-10 before:rounded-sm",
         areas[bento_area],
       )}
     >

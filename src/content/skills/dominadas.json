@@ -9,6 +9,10 @@
         {
           "iconName": "JavaScript",
           "name": "JavaScript"
+        },
+        {
+          "iconName": "NextJS14",
+          "name": "NextJS 14"
         }
       ]
     },
@@ -29,7 +33,7 @@
         },
         {
           "iconName": "Html",
-          "name": "Semantic Html"
+          "name": "Semantic HTML"
         }
       ]
     },
@@ -43,6 +47,15 @@
         {
           "iconName": "UkFlag",
           "name": "English"
+        }
+      ]
+    },
+    {
+      "category": "diseño",
+      "skillSet": [
+        {
+          "iconName": "Figma",
+          "name": "Figma"
         }
       ]
     }

@@ -62,6 +62,12 @@
                 "icon": {
                   "type": "string",
                   "enum": [
+                    "Security",
+                    "CICD",
+                    "Supabase",
+                    "AWS",
+                    "MongoDB",
+                    "PostgreSQL",
                     "NPM",
                     "Strapi",
                     "RadixUI",
@@ -75,8 +81,6 @@
                     "ReactNative",
                     "GSAP",
                     "Redux",
-                    "Jquery",
-                    "Laravel",
                     "Docker",
                     "SQL",
                     "Nest",

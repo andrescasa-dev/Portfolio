@@ -15,7 +15,7 @@ function MySkills({ skillLifeCycle: skills }: Props) {
   return (
     <Tabs defaultValue="all_my_skills" className="w-full grid">
       <TabsList className="justify-self-center mb-8">
-        <TabsTrigger className="capitalize" value={"all_my_skills"}>Conocidas</TabsTrigger>
+        <TabsTrigger className="capitalize" value={"all_my_skills"}>Con Experiencia</TabsTrigger>
         <TabsTrigger className="capitalize" value={"quiero_aprender"}>Quiero aprender</TabsTrigger>
         <TabsTrigger className="capitalize" value={"herramientas"}>Herramientas</TabsTrigger>
       </TabsList>

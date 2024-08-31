@@ -3,13 +3,13 @@ import {
   DropdownMenuContent,
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu"
+import { cn } from "@/lib/utils"
 import { DropdownMenuRadioGroup, DropdownMenuRadioItem } from "@radix-ui/react-dropdown-menu"
 import type { CollectionEntry } from "astro:content"
-import { ChevronDown } from "lucide-react"
 import { useEffect, useState } from "react"
 import SkillCategorizedGrid from "./SkillCategorizedGrid"
 import { Button, buttonVariants } from "./ui/button"
-import { cn } from "@/lib/utils"
+import { ListFilter } from "lucide-react"
 
 interface Props {
   skills: CollectionEntry<"skills">[]
@@ -27,11 +27,13 @@ function SkillsWithFilter({ skills }: Props) {
   return (
     <div className="grid gap-4">
       <DropdownMenu>
-        <DropdownMenuTrigger className={cn(buttonVariants({ variant: 'outline' }), "justify-self-end capitalize")} asChild>
-          <Button variant="secondary">Filtrar Por: {filteredBy}<ChevronDown className="w-4 h-4 ml-2" /> </Button>
+        <DropdownMenuTrigger className={cn(buttonVariants({ variant: 'outline' }), "justify-self-end capitalize w-36")} asChild>
+          <Button variant="secondary">{filteredBy}
+             <ListFilter className="w-4 h-4 ml-2" /> 
+          </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
-          <DropdownMenuRadioGroup value={filteredBy} onValueChange={setFilteredBy}>
+          <DropdownMenuRadioGroup className="flex flex-col gap-2 w-full " value={filteredBy} onValueChange={setFilteredBy}>
             {[{ id: 'todas', data: { order: 0 } }, ...skills].sort((a, b) => a.data.order - b.data.order).map((skill) => (
               <DropdownMenuRadioItem value={skill.id} key={crypto.randomUUID()} >
                 <Button className="w-full capitalize flex items-center" variant={'ghost'}>{skill.id}</Button>

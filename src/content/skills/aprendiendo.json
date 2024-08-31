@@ -11,24 +11,6 @@
           "name": "TRPC"
         }
       ]
-    },
-    {
-      "category": "backend",
-      "skillSet": [
-        {
-          "iconName": "GraphQL",
-          "name": "GraphQL"
-        }
-      ]
-    },
-    {
-      "category": "frontend",
-      "skillSet": [
-        {
-          "iconName": "Shadcn",
-          "name": "Shadcn"
-        }
-      ]
     }
   ]
 }

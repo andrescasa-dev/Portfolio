@@ -7,30 +7,18 @@
       "category": "frontend",
       "skillSet": [
         {
-          "iconName": "Angular",
-          "name": "Angular"
-        },
-        {
           "iconName": "ReactNative",
           "name": "React Native"
         },
         {
           "iconName": "GSAP",
           "name": "GSAP"
-        },
-        {
-          "iconName": "Jquery",
-          "name": "Jquery"
         }
       ]
     },
     {
       "category": "backend",
       "skillSet": [
-        {
-          "iconName": "Laravel",
-          "name": "Laravel"
-        },
         {
           "iconName": "Docker",
           "name": "Docker"
@@ -42,16 +30,36 @@
         {
           "iconName": "Nest",
           "name": "Nest JS"
+        },
+        {
+          "iconName": "AWS",
+          "name": "AWS"
+        },
+        {
+          "iconName": "Supabase",
+          "name": "Supabase"
+        },
+        {
+          "iconName": "PostgreSQL",
+          "name": "PostgreSQL"
+        },
+        {
+          "iconName": "MongoDB",
+          "name": "MongoDB"
+        },
+        {
+          "iconName": "CICD",
+          "name": "CI/CD"
+        },
+        {
+          "iconName": "Security",
+          "name": "Seguridad"
         }
       ]
     },
     {
       "category": "full stack",
       "skillSet": [
-        {
-          "iconName": "PHP",
-          "name": "PHP"
-        },
         {
           "iconName": "Remix",
           "name": "Remix"

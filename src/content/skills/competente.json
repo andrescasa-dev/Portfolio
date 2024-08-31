@@ -7,6 +7,10 @@
       "category": "frontend",
       "skillSet": [
         {
+          "iconName": "Angular",
+          "name": "Angular"
+        },
+        {
           "iconName": "Astro",
           "name": "Astro"
         },
@@ -49,10 +53,6 @@
           "name": "NextJS 13"
         },
         {
-          "iconName": "NextJS14",
-          "name": "NextJS 14"
-        },
-        {
           "iconName": "TypeScript",
           "name": "TypeScript"
         }
@@ -61,10 +61,6 @@
     {
       "category": "diseño",
       "skillSet": [
-        {
-          "iconName": "Figma",
-          "name": "Figma"
-        },
         {
           "iconName": "UxDesign",
           "name": "Ux Desing"

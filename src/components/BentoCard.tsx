@@ -5,6 +5,7 @@ import { ScrollArea } from "@radix-ui/react-scroll-area";
 import type { CollectionEntry } from "astro:content";
 import Card from "./Card";
 import Icon from "./icons/Icon";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./ui/tooltip";
 
 interface Props {
   project: CollectionEntry<'projects'>
@@ -39,13 +40,22 @@ function BentoCard({ project, handleClick }: Props) {
                 <h3 className="font-medium capitalize">{category}</h3>
                 <ul className={cn("grid gap-2 mt-2", {"grid-cols-[repeat(3,40px)]": items.length >= 3, "grid-cols-[repeat(2,40px)]": items.length === 2, "grid-cols-[repeat(1,40px)]": items.length === 1, })}>
                   {items.map(({ name, icon }) => (
-                    <li key={crypto.randomUUID()}>
-                      <Icon
-                        name={icon}
-                        className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10"
-                        aria-label={name}
-                      />
-                    </li>
+                    <TooltipProvider delayDuration={150}>
+                    <Tooltip >
+                      <TooltipTrigger>
+                        <li key={crypto.randomUUID()}>
+                          <Icon
+                            name={icon}
+                            className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10"
+                            aria-label={name}
+                          />
+                        </li>
+                        </TooltipTrigger>
+                      <TooltipContent>
+                        <p>{name}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
                   ))}
                 </ul>
               </section>

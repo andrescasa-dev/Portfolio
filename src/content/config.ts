@@ -1,5 +1,5 @@
 
-import techIcons from "@/components/icons/techIcons"
+import techIcons from "@/components/icons/IconMap"
 import { astroZodCollectionsToJsonSchemas } from "astro-zod-to-json-schema"
 import { z, defineCollection } from "astro:content"
 

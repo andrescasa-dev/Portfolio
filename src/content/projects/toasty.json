@@ -41,7 +41,7 @@
         },
         {
           "name": "NPM",
-          "icon": "Todoist"
+          "icon": "NPM"
         }
       ]
     },
@@ -51,6 +51,10 @@
         {
           "name": "Figma",
           "icon": "Figma"
+        },
+        {
+          "name": "Ux Design",
+          "icon": "UxDesign"
         }
       ]
     }

@@ -1,2 +1,2 @@
-import techIcons from "../components/icons/techIcons"
+import techIcons from "../components/icons/IconMap"
 export type Icons = keyof typeof techIcons;

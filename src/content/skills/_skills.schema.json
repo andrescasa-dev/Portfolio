@@ -40,6 +40,9 @@
                 "iconName": {
                   "type": "string",
                   "enum": [
+                    "NPM",
+                    "Strapi",
+                    "RadixUI",
                     "UxDesign",
                     "SpainFlag",
                     "GermanFlag",

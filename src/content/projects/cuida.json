@@ -36,7 +36,7 @@
         },
         {
           "name": "RadixUI",
-          "icon": "Todoist"
+          "icon": "RadixUI"
         }
       ]
     },
@@ -45,7 +45,7 @@
       "items": [
         {
           "name": "Strapi",
-          "icon": "Todoist"
+          "icon": "Strapi"
         },
         {
           "name": "JavaScript",
@@ -59,6 +59,10 @@
         {
           "name": "Figma",
           "icon": "Figma"
+        },
+        {
+          "name": "Ux Design",
+          "icon": "UxDesign"
         }
       ]
     }

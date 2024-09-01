@@ -10,7 +10,7 @@ function SkillCategorizedGrid({ categories }: Props) {
     <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
       {categories.map(({ category, skillSet }) => (
         <section className="flex flex-col" key={crypto.randomUUID()} >
-          <h2 className="title capitalize">{category}</h2>
+          <h2 className="title capitalize delay-100">{category}</h2>
           <div className="bg-muted rounded-lg flex-grow  mt-6">
             <div className="grid grid-cols-[repeat(auto-fill,_minmax(117px,_1fr))] gap-2 ">
               {skillSet.map(({ clarification, iconName, name }) => (

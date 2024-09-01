@@ -27,10 +27,12 @@ function ProjectsBento({ myProjects }: Props) {
           }}
         />)
       )}
-      <BentoContent
-        project={currentProject}
-        handleClose={() => setCurrentProject(null)}
-      />
+      {currentProject && (
+        <BentoContent
+          project={currentProject}
+          handleClose={() => setCurrentProject(null)}
+        />)
+      }
     </div>
   )
 }

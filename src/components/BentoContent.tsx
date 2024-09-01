@@ -31,7 +31,7 @@ function BentoContent({ handleClose, project }: Props) {
   return (
     <Card 
       as='section'
-      className={cn('bg-background gap-y-2 z-40 animate-appearing', openAreas[bento_area])}
+      className={cn('bg-background gap-y-2 z-40', openAreas[bento_area])}
     >
       <Button size={'icon'} className="absolute top-3 right-2" variant={"ghost"} onClick={handleClose}>
         <Exit className=" w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6" />

@@ -19,13 +19,13 @@ function MySkills({ skillLifeCycle: skills }: Props) {
         <TabsTrigger className="capitalize" value={"quiero_aprender"}>Quiero aprender</TabsTrigger>
         <TabsTrigger className="capitalize" value={"herramientas"}>Herramientas</TabsTrigger>
       </TabsList>
-      <TabsContent value={"all_my_skills"} className="animate-appearing duration-75">
+      <TabsContent value={"all_my_skills"}>
         <SkillsWithFilter skills={mySkills} />
       </TabsContent>
-      <TabsContent value={"quiero_aprender"} className="animate-appearing duration-75">
+      <TabsContent value={"quiero_aprender"}>
         <SkillCategorizedGrid categories={wantToLearn.data.categories} />
       </TabsContent>
-      <TabsContent value={"herramientas"} className="animate-appearing duration-75">
+      <TabsContent value={"herramientas"}>
         <SkillCategorizedGrid categories={tools.data.categories} />
       </TabsContent>
     </Tabs>

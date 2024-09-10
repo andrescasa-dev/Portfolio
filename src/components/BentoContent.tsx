@@ -39,7 +39,7 @@ function BentoContent({ handleClose, project }: Props) {
       <h2 className={cn("title", contentConfig[bento_area].title)}>{title}</h2>
       <p className={cn("base", contentConfig[bento_area].desc)}>{description}</p>
       <section aria-label="Project details">
-        <Accordion className={cn("mt-3 md:mt-6", contentConfig[bento_area].accordion)} type="single" collapsible>
+        <Accordion className={cn("mt-3 md:mt-6", contentConfig[bento_area].accordion)} type="single" collapsible defaultValue="item-1">
           <AccordionItem value="item-1">
             <AccordionTrigger className="subtitle">Características</AccordionTrigger>
             <AccordionContent className="base">

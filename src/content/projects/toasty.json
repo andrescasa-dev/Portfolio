@@ -3,7 +3,7 @@
   "title": "Toasty",
   "description": "Paquete NPM que permite crear notificaciones emergentes personalizables. Documentación y demo incluidas.",
   "bento_area": "secondary",
-  "demo": "https://digital-hippo-casa.up.railway.app/",
+  "demo": "https://toasty-playground.vercel.app/",
   "code": "https://github.com/andrescasa-dev/toasty",
   "read_more": {"label": "Ver Documentación", "href": "https://www.npmjs.com/package/toasty-casa"},
   "technologies": [
@@ -23,7 +23,7 @@
           "icon": "Tailwind"
         },
         {
-          "name": "Html5",
+          "name": "Semantic HTML",
           "icon": "Html"
         }
       ]

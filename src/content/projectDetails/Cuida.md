@@ -3,7 +3,7 @@ layout: "../../layouts/BlogMDLayout.astro"
 title: "Cuida, Plataforma para Refugios Animales"
 publishDate: "2024-08-21"
 tags: ["Frontend","Design System", "UX/UI Design", "Research"]
-demo: "https://www.figma.com/design/422k9OQmvHMQZq9JQ3Lzdd/Cuida?node-id=0-1&t=hPnuh0Ziz6D9XCvO-0"
+demo: "https://www.figma.com/proto/422k9OQmvHMQZq9JQ3Lzdd/Cuida?node-id=1113-10407&t=VrUm6n3CQznHstWK-1&starting-point-node-id=1113%3A10407&show-proto-sidebar=1"
 code: "https://github.com/andrescasa-dev/cuida-frontend"
 ---
 

@@ -11,16 +11,16 @@
           "name": "Angular"
         },
         {
+          "iconName": "Redux",
+          "name": "Redux vanilla"
+        },
+        {
           "iconName": "Astro",
           "name": "Astro"
         },
         {
           "iconName": "Vite",
           "name": "Vite"
-        },
-        {
-          "iconName": "Redux",
-          "name": "Redux vanilla"
         }
       ]
     },
@@ -28,20 +28,28 @@
       "category": "backend",
       "skillSet": [
         {
-          "iconName": "NodeJS",
-          "name": "NodeJS"
-        },
-        {
           "iconName": "PayloadCMS",
           "name": "Payload CMS"
         },
         {
-          "iconName": "Express",
-          "name": "Express"
-        },
-        {
           "iconName": "Linux",
           "name": "Linux"
+        },
+        {
+          "iconName": "PostgreSQL",
+          "name": "PostgreSQL"
+        },
+        {
+          "iconName": "MongoDB",
+          "name": "MongoDB"
+        },
+        {
+          "iconName": "AWS",
+          "name": "AWS"
+        },
+        {
+          "iconName": "Docker",
+          "name": "Docker"
         }
       ]
     },
@@ -51,10 +59,6 @@
         {
           "iconName": "NextJS13",
           "name": "NextJS 13"
-        },
-        {
-          "iconName": "TypeScript",
-          "name": "TypeScript"
         }
       ]
     },

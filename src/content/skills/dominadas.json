@@ -11,6 +11,10 @@
           "name": "JavaScript"
         },
         {
+          "iconName": "TypeScript",
+          "name": "TypeScript"
+        },
+        {
           "iconName": "NextJS14",
           "name": "NextJS 14"
         }
@@ -34,6 +38,27 @@
         {
           "iconName": "Html",
           "name": "Semantic HTML"
+        }
+      ]
+    },
+    {
+      "category": "backend",
+      "skillSet": [
+        {
+          "iconName": "Express",
+          "name": "Express"
+        },
+        {
+          "iconName": "NodeJS",
+          "name": "NodeJS"
+        },
+        {
+          "iconName": "SQL",
+          "name": "SQL"
+        },
+        {
+          "iconName": "Nest",
+          "name": "Nest JS"
         }
       ]
     },

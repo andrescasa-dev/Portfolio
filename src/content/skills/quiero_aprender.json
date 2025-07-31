@@ -20,32 +20,8 @@
       "category": "backend",
       "skillSet": [
         {
-          "iconName": "Docker",
-          "name": "Docker"
-        },
-        {
-          "iconName": "SQL",
-          "name": "SQL"
-        },
-        {
-          "iconName": "Nest",
-          "name": "Nest JS"
-        },
-        {
-          "iconName": "AWS",
-          "name": "AWS"
-        },
-        {
           "iconName": "Supabase",
           "name": "Supabase"
-        },
-        {
-          "iconName": "PostgreSQL",
-          "name": "PostgreSQL"
-        },
-        {
-          "iconName": "MongoDB",
-          "name": "MongoDB"
         },
         {
           "iconName": "CICD",

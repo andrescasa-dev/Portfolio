@@ -2,10 +2,13 @@
   "$schema": "./_projects.schema.json",
   "title": "Toasty",
   "description": "Paquete NPM que permite crear notificaciones emergentes personalizables. Documentación y demo incluidas.",
-  "bento_area": "secondary",
+  "bento_area": "tertiary",
   "demo": "https://toasty-playground.vercel.app/",
   "code": "https://github.com/andrescasa-dev/toasty",
-  "read_more": {"label": "Ver Documentación", "href": "https://www.npmjs.com/package/toasty-casa"},
+  "read_more": {
+    "label": "Ver Documentación",
+    "href": "https://www.npmjs.com/package/toasty-casa"
+  },
   "technologies": [
     {
       "category": "frontend",
@@ -80,7 +83,6 @@
       "title": "Accesibilidad",
       "solution": "Para ello seguí las pautas de W3C y probe el componente usando el lector de pantalla NVDA"
     }
-    
   ],
   "what_i_learned": [
     "Aprendí a desarrollar comandos CLI con NodeJS",

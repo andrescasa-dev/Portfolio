@@ -2,7 +2,7 @@
   "$schema": "./_projects.schema.json",
   "title": "Netflix Clone",
   "description": "Pequeño clon de Netflix. Proyecto final del curso Next.js 13 por Zero To Mastery",
-  "bento_area": "quaternary",
+  "bento_area": "secondary",
   "demo": "https://netflixcasa.vercel.app/",
   "code": "https://github.com/andrescasa-dev/netflix-clone",
   "technologies": [

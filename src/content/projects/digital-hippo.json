@@ -2,7 +2,7 @@
   "$schema": "./_projects.schema.json",
   "title": "Digital Hippo",
   "description": "Plataforma de comercio electrónico para la compra y venta productos digitales. Guiado por josh tried coding",
-  "bento_area": "tertiary",
+  "bento_area": "primary",
   "demo": "https://digital-hippo-casa.up.railway.app/",
   "code": "https://github.com/andrescasa-dev/digital-hippo",
   "technologies": [
@@ -69,6 +69,19 @@
         {
           "name": "Stripe",
           "icon": "Stripe"
+        }
+      ]
+    },
+    {
+      "category": "design",
+      "items": [
+        {
+          "name": "Figma",
+          "icon": "Figma"
+        },
+        {
+          "name": "Ux Design",
+          "icon": "UxDesign"
         }
       ]
     }
